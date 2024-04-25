@@ -1,0 +1,10 @@
+C:\Users\thabata.lima\source\repos\Repeticoes\Repeticoes\bin\Debug\Repeticoes.exe.config
+C:\Users\thabata.lima\source\repos\Repeticoes\Repeticoes\bin\Debug\Repeticoes.exe
+C:\Users\thabata.lima\source\repos\Repeticoes\Repeticoes\bin\Debug\Repeticoes.pdb
+C:\Users\thabata.lima\source\repos\Repeticoes\Repeticoes\obj\Debug\Repeticoes.csproj.AssemblyReference.cache
+C:\Users\thabata.lima\source\repos\Repeticoes\Repeticoes\obj\Debug\Repeticoes.Form1.resources
+C:\Users\thabata.lima\source\repos\Repeticoes\Repeticoes\obj\Debug\Repeticoes.Properties.Resources.resources
+C:\Users\thabata.lima\source\repos\Repeticoes\Repeticoes\obj\Debug\Repeticoes.csproj.GenerateResource.cache
+C:\Users\thabata.lima\source\repos\Repeticoes\Repeticoes\obj\Debug\Repeticoes.csproj.CoreCompileInputs.cache
+C:\Users\thabata.lima\source\repos\Repeticoes\Repeticoes\obj\Debug\Repeticoes.exe
+C:\Users\thabata.lima\source\repos\Repeticoes\Repeticoes\obj\Debug\Repeticoes.pdb

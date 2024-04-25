@@ -1,0 +1,10 @@
+C:\Users\thabata.lima\source\repos\Banco\Banco\bin\Debug\Banco.exe.config
+C:\Users\thabata.lima\source\repos\Banco\Banco\bin\Debug\Banco.exe
+C:\Users\thabata.lima\source\repos\Banco\Banco\bin\Debug\Banco.pdb
+C:\Users\thabata.lima\source\repos\Banco\Banco\obj\Debug\Banco.csproj.AssemblyReference.cache
+C:\Users\thabata.lima\source\repos\Banco\Banco\obj\Debug\Banco.Form1.resources
+C:\Users\thabata.lima\source\repos\Banco\Banco\obj\Debug\Banco.Properties.Resources.resources
+C:\Users\thabata.lima\source\repos\Banco\Banco\obj\Debug\Banco.csproj.GenerateResource.cache
+C:\Users\thabata.lima\source\repos\Banco\Banco\obj\Debug\Banco.csproj.CoreCompileInputs.cache
+C:\Users\thabata.lima\source\repos\Banco\Banco\obj\Debug\Banco.exe
+C:\Users\thabata.lima\source\repos\Banco\Banco\obj\Debug\Banco.pdb
