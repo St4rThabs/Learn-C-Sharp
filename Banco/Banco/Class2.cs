@@ -14,15 +14,21 @@ namespace Banco
         private string endereco;
         private int idade;
 
+
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public string Rg { get; set; }
         public string Endereco { get; set; }
         public int Idade { get; set; }
-        
+
+        public Cliente()
+        {
+            this.Nome = nome;
+        }
+
         public bool EhMaiorDeIdade()
         {
-            if(this.idade > 18)
+            if (this.idade > 18)
             {
                 return true;
             }

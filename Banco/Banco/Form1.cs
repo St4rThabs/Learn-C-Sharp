@@ -21,7 +21,7 @@ namespace Banco
         private void button1_Click(object sender, EventArgs e)
         {
             /*
-             *  -- Primeira implementação da classe Conta -- 
+             *  -- Primeira implementação da classe Conta --------------------------------
              *  
             Conta c = new Conta();
             c.numero = 1;
@@ -36,7 +36,7 @@ namespace Banco
             }+
             */
 
-            /* -- Teste dos métodos transfere e deposita --
+            /* -- Teste dos métodos transfere e deposita ------------------------------
              * 
              * Conta victor = new Conta();
             Conta guilherme = new Conta();
@@ -50,7 +50,7 @@ namespace Banco
             MessageBox.Show(victor.titular);
             */
 
-            /* -- Verificação se duas contas são iguais --
+            /* -- Verificação se duas contas Mauricio são iguais ------------------------
             
             Conta mauricio = new Conta();
             mauricio.numero = 1;
@@ -72,33 +72,8 @@ namespace Banco
             }
             */
 
-            // 
-            /*
-            Conta mauricio = new Conta();
-            mauricio.saldo = 2000.0;
-            Conta copia = mauricio;
-            copia.saldo = 3000.0;
-            MessageBox.Show("mauricio = " + mauricio.saldo);
-            MessageBox.Show("copia = " + copia.saldo);
-            */
-
-            Conta umaConta = new Conta();
-            Cliente maria = new Cliente();
-
-            //maria.nome = "Maria";
-            maria.Idade = 10;
-
-            umaConta.Numero = 2;
-            umaConta.Titular = maria;
-            umaConta.Saldo = 3000.0;
-            umaConta.Idade = maria.Idade;
-
-            // Outra forma de atribuição de variável
-            umaConta.Titular.Nome = "Maria";
-            umaConta.Titular.Rg = "12345678-9";
-
             /* 
-              ---- Conta Guilherme ----
+              -- Conta Guilherme ---------------------------------------------------
 
             Conta umaConta1 = new Conta();
             Cliente guilherme = new Cliente();
@@ -108,14 +83,54 @@ namespace Banco
             MessageBox.Show(guilherme.rg);
             */
 
+            /*
+             -- Conta Mauricio ------------------------------------------------------
+
+            Conta mauricio = new Conta();
+            mauricio.saldo = 2000.0;
+            Conta copia = mauricio;
+            copia.saldo = 3000.0;
+            MessageBox.Show("mauricio = " + mauricio.saldo);
+            MessageBox.Show("copia = " + copia.saldo);
+            */
+
+
+
+            Conta umaConta = new Conta();
+            Cliente maria = new Cliente()
+            {
+                //bloco initializer
+                Nome = "Maria",
+                Idade = 15,
+                Rg = "12345678-9"
+            };
+
+            //maria.Nome = "Maria";
+            //maria.Idade = 15;
+            //maria.Rg = "12345678-9";
+
+            umaConta.Titular = maria;
+            umaConta.Numero = 2;
+
+            //umaConta.Saldo = 3000.0; -> não pode ser mais ser alterado fora da classe
+
+            // -- Outra forma de atribuição de variável --
+            //umaConta.Titular.Nome = "Maria";
+            //umaConta.Titular.Rg = "12345678-9";
+
             // Implementação de gets e sets
 
             MessageBox.Show(umaConta.Titular.Nome);
             MessageBox.Show(maria.Rg);
+            umaConta.Deposita(1000.0);
 
-            string mensagem = "Titular = " + umaConta.Titular + "\nIdade = " + umaConta.Idade + "\nSaldo = " + umaConta.Saldo + "\nMaior de Idade = "+maria.EhMaiorDeIdade();
+            string mensagem = "Titular = " + umaConta.Titular.Nome + "\nIdade = " + umaConta.Titular.Idade + "\nSaldo = " + umaConta.Saldo + "\nMaior de Idade = " + umaConta.Titular.EhMaiorDeIdade();
+
             MessageBox.Show(mensagem);
             MessageBox.Show(umaConta.Saca(300.0).ToString());
+
+            umaConta.Deposita(500.0);
+
             MessageBox.Show("Saldo atual = " + umaConta.Saldo.ToString());
         }
     }

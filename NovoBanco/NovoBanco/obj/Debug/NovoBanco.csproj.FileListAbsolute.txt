@@ -1,0 +1,10 @@
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\bin\Debug\NovoBanco.exe.config
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\bin\Debug\NovoBanco.exe
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\bin\Debug\NovoBanco.pdb
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.csproj.AssemblyReference.cache
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.Form1.resources
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.Properties.Resources.resources
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.csproj.GenerateResource.cache
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.csproj.CoreCompileInputs.cache
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.exe
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.pdb
