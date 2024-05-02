@@ -10,7 +10,8 @@ namespace NovoBanco
     {
         public override void Saca(double valor)
         {
-            this.Saldo -= (valor + 0.10);
+            base.Saca(valor + 0.10);
+            //this.Saldo = Saldo - valor + (valor * 0.10);
         }
     }
 }

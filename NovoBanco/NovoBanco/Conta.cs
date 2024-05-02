@@ -9,10 +9,10 @@ namespace NovoBanco
         }
 
         public int Numero { get; set; }
-        public double Saldo { get; set; }
+        public double Saldo { get; private set; }
         public Cliente Titular { get; set; }
 
-        public void Deposita(double valorOperacao)
+        public virtual void Deposita(double valorOperacao)
         {
             this.Saldo += valorOperacao;
         }
