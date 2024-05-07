@@ -18,6 +18,10 @@ namespace NovoBanco
         {
             this.formPrincipal = formPrincipal;
             InitializeComponent();
+
+            comboTipoConta.Items.Add("Conta");
+            comboTipoConta.Items.Add("Conta Corrente");
+            comboTipoConta.Items.Add("Conta Poupança");
         }
 
         public FormCadastroConta()
@@ -29,9 +33,31 @@ namespace NovoBanco
         {
             //cadastrando uma nova instância de conta
 
-            Conta novaConta = new ContaCorrente();
-            novaConta.Titular = new Cliente(textoTitular.Text);
+            Conta novaConta = new ContaCorrente(); 
+            novaConta.Titular = new Cliente(textoTitularCadastro.Text);
             novaConta.Numero = Convert.ToInt32(textoNumero.Text);
+
+            this.formPrincipal.AdicionaConta(novaConta);
+
+        }
+
+        private void pbxConta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textoTitularCadastro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboTipoConta_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

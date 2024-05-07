@@ -17,6 +17,8 @@ namespace NovoBanco
 
         private int numeroDeContas; // atributo que será utilizado para saber o numero de contas existentes
 
+        
+
         //private ContaPoupanca contaPoupanca;
         //private ContaCorrente contaCorrente;
 
@@ -37,7 +39,7 @@ namespace NovoBanco
         private void Form1_Load(object sender, EventArgs e)
         {
             // O this.c cria uma nova conta e guarda sua referência no atributo do formulário que está acima
-            this.contas = new Conta[3]; // instânciando um array de contas
+            this.contas = new Conta[10]; // instânciando um array de contas
             //this.contaPoupanca = new ContaPoupanca();
             //this.contaCorrente = new ContaCorrente(); // para utilizar o conta corrente, basta substituir tudo que tem contaPoupanca, pois ambos herdam de conta, logo tem os mesmos atributos
 
@@ -55,17 +57,22 @@ namespace NovoBanco
             */
 
             //Inicializando contas com array
-            this.contas[0] = new Conta();
-            this.contas[0].Titular = new Cliente("victor");
-            this.contas[0].Numero = 1;
 
-            this.contas[1] = new ContaPoupanca();
-            this.contas[1].Titular = new Cliente("mauricio");
-            this.contas[1].Numero = 2;
+            Conta c1 = new Conta();
+            c1.Titular = new Cliente("victor");
+            c1.Numero = 1;
+            this.AdicionaConta(c1);
 
-            this.contas[2] = new ContaCorrente();
-            this.contas[2].Titular = new Cliente("osni");
-            this.contas[2].Numero = 3;
+            Conta c2 = new ContaPoupanca();
+            c2.Titular = new Cliente("mauricio");
+            c2.Numero = 2;
+            this.AdicionaConta(c2);
+
+            Conta c3 = new ContaCorrente();
+            c3.Titular = new Cliente("osni");
+            c3.Numero = 3;
+            this.AdicionaConta(c3);
+
 
             // Para mudar o texto que aparece no textbox basta: nomeObjeto.Text = <o texto que quer>
             // textoTitular.Text = contas[indice].Titular.Nome;
@@ -90,22 +97,17 @@ namespace NovoBanco
             */
 
             //Criação de duas contas para ver se vai somar os saldos por mais que sejam de classes diferentes
-            
-            Conta c1 = new Conta();
-            ContaPoupanca c2 = new ContaPoupanca();
+
+            Conta ct1 = new Conta();
+            ContaPoupanca ct2 = new ContaPoupanca();
 
             c1.Deposita(100.0);
             c2.Deposita(50.0);
 
-            t.Soma(c1);
-            t.Soma(c2); //funcionou!
+            t.Soma(ct1);
+            t.Soma(ct2); //funcionou!
 
             // comboContas.Items.Add("Texto que aparecerá no combo box"); -> adiona itens ao comboBox
-
-            foreach (Conta conta in contas)
-            {
-                comboContas.Items.Add(conta.Titular.Nome);
-            }
 
         }
 
@@ -168,6 +170,54 @@ namespace NovoBanco
             textoTitular.Text = selecionada.Titular.Nome;
             textoSaldo.Text = Convert.ToString(selecionada.Saldo);
             textoNumero.Text = Convert.ToString(selecionada.Numero);
+           
+        }
+
+        private void botaoNovaConta_Click(object sender, EventArgs e)
+        {
+            FormCadastroConta formularioDeCadastro = new FormCadastroConta(this);
+            formularioDeCadastro.ShowDialog();
         }
     }
+
+    /* ---- Exemplo de classe abstrata e interface (explicação no caderno) ----
+    abstract class Animal
+    {
+        public double peso = 0.0;
+
+        public virtual string FazerSom()
+        {
+            return "";
+        }
+    }
+
+    interface IAnimavel
+    {
+        string FazerSom();
+    }
+
+    class Cachorro : Animal
+    {
+        public override string FazerSom()
+        {
+            return "Au au";
+        }
+    }
+
+    class Leao : Animal
+    {
+        public override string FazerSom()
+        {
+            return "Raaaaaaaaw";
+        }
+    }
+
+    var cachorro = new Cachorro();
+
+    var leao = new Leao();
+
+    cachorro.peso = 11.5;
+
+            leao.peso = 500.0;
+    */
 }

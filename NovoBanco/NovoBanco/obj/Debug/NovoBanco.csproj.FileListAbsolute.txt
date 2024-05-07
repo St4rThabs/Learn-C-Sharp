@@ -8,3 +8,4 @@ C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.cspro
 C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.csproj.CoreCompileInputs.cache
 C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.exe
 C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.pdb
+C:\Users\thabata.lima\source\repos\NovoBanco\NovoBanco\obj\Debug\NovoBanco.FormCadastroConta.resources
