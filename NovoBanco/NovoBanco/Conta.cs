@@ -2,28 +2,42 @@
 
 namespace NovoBanco
 {
-    public class Conta
+    public abstract class Conta
     {
+        private static int numeroDeContas = 0;
+
         public Conta()
         {
+            Conta.numeroDeContas++;
+            this.Numero = Conta.numeroDeContas;
         }
-
+        
         public int Numero { get; set; }
-        public double Saldo { get; private set; }
+        public double Saldo { get; protected set; }
         public Cliente Titular { get; set; }
 
-        public virtual void Deposita(double valorOperacao)
+        public static int ProximoNumero()
         {
-            this.Saldo += valorOperacao;
+            return numeroDeContas + 1;
         }
 
-        public virtual void Saca(double valor)
+        public abstract void Deposita(double valor);
+        /*{
+         * 
+            this.Saldo += valorOperacao;
+
+        }*/
+
+        public abstract void Saca(double valor);
+        /*
         {
+            
             if(valor <= this.Saldo)
             {
                this.Saldo -= valor;
             }
- 
-        }
+            
+         }
+        */
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NovoBanco
 {
-    public class ContaPoupanca : Conta, ITributavel
+    public class ContaInvestimento : Conta, ITributavel
     {
         public override void Deposita(double valor)
         {
@@ -23,9 +23,10 @@ namespace NovoBanco
             }
         }
 
+        // Calcula Tributo faz parte da interface, logo é obritório implementar esse método
         public double CalculaTributo()
         {
-            return this.Saldo * 0.02;
+            return this.Saldo * 0.03;
         }
     }
 }

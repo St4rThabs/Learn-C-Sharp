@@ -19,7 +19,6 @@ namespace NovoBanco
             this.formPrincipal = formPrincipal;
             InitializeComponent();
 
-            comboTipoConta.Items.Add("Conta");
             comboTipoConta.Items.Add("Conta Corrente");
             comboTipoConta.Items.Add("Conta Poupança");
         }
@@ -35,7 +34,7 @@ namespace NovoBanco
 
             Conta novaConta = new ContaCorrente(); 
             novaConta.Titular = new Cliente(textoTitularCadastro.Text);
-            novaConta.Numero = Convert.ToInt32(textoNumero.Text);
+            textoNumero.Text = Convert.ToString(Conta.ProximoNumero()); // -> a conta agora cria o próprio número, então não precisa mais do textoNumero.Text, basta utilizar o método estático
 
             this.formPrincipal.AdicionaConta(novaConta);
 
@@ -57,6 +56,11 @@ namespace NovoBanco
         }
 
         private void comboTipoConta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textoNumero_TextChanged(object sender, EventArgs e)
         {
 
         }

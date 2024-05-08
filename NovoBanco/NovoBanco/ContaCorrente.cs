@@ -1,15 +1,34 @@
 ﻿namespace NovoBanco
 {
-    public class ContaCorrente : Conta
+    public class ContaCorrente : Conta, ITributavel
     {
-        public override void Deposita(double valor)
+        private static int totalDeContas = 0;
+
+        public ContaCorrente()
         {
-            base.Deposita(valor + 0.10);
+            ContaCorrente.totalDeContas++;
+        }
+        public static int ProximaConta()
+        {
+            return totalDeContas++;
         }
 
-        public override void Saca(double valor)
+        public override void Deposita(double valor)
         {
-            base.Saca(valor + 0.10);   
+            this.Saldo += valor + 0.10;
+        }
+
+        public override void Saca(double valor) // por se tratar de um método abastrato, precisa do override também
+        {
+            if (valor <= this.Saldo)
+            {
+                this.Saldo -= valor + 0.10;
+            }
+        }
+
+        public double CalculaTributo()
+        {
+            return this.Saldo * 0.05;
         }
     }
 }

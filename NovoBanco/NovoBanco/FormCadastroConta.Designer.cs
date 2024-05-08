@@ -52,6 +52,7 @@ namespace NovoBanco
             this.textoNumero.Name = "textoNumero";
             this.textoNumero.Size = new System.Drawing.Size(279, 20);
             this.textoNumero.TabIndex = 0;
+            this.textoNumero.TextChanged += new System.EventHandler(this.textoNumero_TextChanged);
             // 
             // textoTitularCadastro
             // 

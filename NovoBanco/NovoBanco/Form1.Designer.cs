@@ -42,8 +42,9 @@ namespace NovoBanco
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboContas = new System.Windows.Forms.ComboBox();
-            this.botaoNovaConta = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.botaoNovaConta = new System.Windows.Forms.Button();
+            this.botaoImpostos = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -192,6 +193,16 @@ namespace NovoBanco
             this.comboContas.TabIndex = 14;
             this.comboContas.SelectedIndexChanged += new System.EventHandler(this.comboContas_SelectedIndexChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(39, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 14);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Escolha a conta";
+            // 
             // botaoNovaConta
             // 
             this.botaoNovaConta.BackColor = System.Drawing.Color.CadetBlue;
@@ -210,15 +221,23 @@ namespace NovoBanco
             this.botaoNovaConta.UseVisualStyleBackColor = false;
             this.botaoNovaConta.Click += new System.EventHandler(this.botaoNovaConta_Click);
             // 
-            // label6
+            // botaoImpostos
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(39, 50);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 14);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Escolha a conta";
+            this.botaoImpostos.BackColor = System.Drawing.Color.CadetBlue;
+            this.botaoImpostos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.botaoImpostos.FlatAppearance.BorderColor = System.Drawing.Color.CadetBlue;
+            this.botaoImpostos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoImpostos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PowderBlue;
+            this.botaoImpostos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoImpostos.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botaoImpostos.ForeColor = System.Drawing.Color.White;
+            this.botaoImpostos.Location = new System.Drawing.Point(384, 406);
+            this.botaoImpostos.Name = "botaoImpostos";
+            this.botaoImpostos.Size = new System.Drawing.Size(100, 28);
+            this.botaoImpostos.TabIndex = 15;
+            this.botaoImpostos.Text = "Impostos";
+            this.botaoImpostos.UseVisualStyleBackColor = false;
+            this.botaoImpostos.Click += new System.EventHandler(this.botaoImpostos_Click);
             // 
             // Form1
             // 
@@ -226,6 +245,7 @@ namespace NovoBanco
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(496, 441);
+            this.Controls.Add(this.botaoImpostos);
             this.Controls.Add(this.botaoNovaConta);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -257,6 +277,7 @@ namespace NovoBanco
         private System.Windows.Forms.ComboBox comboContas;
         private System.Windows.Forms.Button botaoNovaConta;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button botaoImpostos;
     }
 }
 

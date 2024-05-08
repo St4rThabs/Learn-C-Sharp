@@ -13,7 +13,7 @@ namespace NovoBanco
     public partial class Form1 : Form
     {
         // Para ser utilizada em vários métodos declaramos o atributo de referência aqui
-        private Conta[] contas; 
+        private List<Conta> contas;
 
         private int numeroDeContas; // atributo que será utilizado para saber o numero de contas existentes
 
@@ -26,7 +26,7 @@ namespace NovoBanco
         // adicionando um método para adiocionar a conta cadastrada no FromCadastroConta
         public void AdicionaConta(Conta conta)
         {
-            this.contas[this.numeroDeContas] = conta;
+            this.contas.Add(conta); // -> adiocionando conta
             this.numeroDeContas++;
             comboContas.Items.Add(conta.Titular.Nome); //adicionando no comboBox
         }
@@ -39,7 +39,7 @@ namespace NovoBanco
         private void Form1_Load(object sender, EventArgs e)
         {
             // O this.c cria uma nova conta e guarda sua referência no atributo do formulário que está acima
-            this.contas = new Conta[10]; // instânciando um array de contas
+            this.contas = new List<Conta>(); // instânciando um array de contas
             //this.contaPoupanca = new ContaPoupanca();
             //this.contaCorrente = new ContaCorrente(); // para utilizar o conta corrente, basta substituir tudo que tem contaPoupanca, pois ambos herdam de conta, logo tem os mesmos atributos
 
@@ -58,7 +58,7 @@ namespace NovoBanco
 
             //Inicializando contas com array
 
-            Conta c1 = new Conta();
+            ContaCorrente c1 = new ContaCorrente(); // -> alterado para conta corrente, pois apenas Conta não vai rodar por se tratar de uma classe abstrata
             c1.Titular = new Cliente("victor");
             c1.Numero = 1;
             this.AdicionaConta(c1);
@@ -96,9 +96,8 @@ namespace NovoBanco
             simples = new Cliente("Victoria"); // linha 3
             */
 
-            //Criação de duas contas para ver se vai somar os saldos por mais que sejam de classes diferentes
-
-            Conta ct1 = new Conta();
+            /* ---- Criação de duas contas para ver se vai somar os saldos por mais que sejam de classes diferentes ----
+            ContaCorrente ct1 = new ContaCorrente();
             ContaPoupanca ct2 = new ContaPoupanca();
 
             c1.Deposita(100.0);
@@ -106,6 +105,7 @@ namespace NovoBanco
 
             t.Soma(ct1);
             t.Soma(ct2); //funcionou!
+            */
 
             // comboContas.Items.Add("Texto que aparecerá no combo box"); -> adiona itens ao comboBox
 
@@ -178,9 +178,28 @@ namespace NovoBanco
             FormCadastroConta formularioDeCadastro = new FormCadastroConta(this);
             formularioDeCadastro.ShowDialog();
         }
+
+        private void botaoImpostos_Click(object sender, EventArgs e)
+        {
+            ContaCorrente conta = new ContaCorrente();
+            SeguroDeVida sv = new SeguroDeVida();
+
+            conta.Deposita(200.0);
+
+            
+            TotalizadorDeTributos totalizador = new TotalizadorDeTributos();
+            totalizador.Acumula(conta);
+
+            MessageBox.Show("Total: " + totalizador.Total);
+            totalizador.Acumula(sv);
+
+            MessageBox.Show("Total: " + totalizador.Total);
+        }
     }
+}
 
     /* ---- Exemplo de classe abstrata e interface (explicação no caderno) ----
+     
     abstract class Animal
     {
         public double peso = 0.0;
@@ -198,7 +217,7 @@ namespace NovoBanco
 
     class Cachorro : Animal
     {
-        public override string FazerSom()
+        public c string FazerSom()
         {
             return "Au au";
         }
@@ -220,4 +239,4 @@ namespace NovoBanco
 
             leao.peso = 500.0;
     */
-}
+
