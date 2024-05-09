@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NovoBanco.Properties {
+namespace NovoBanco.Contas.Properties {
     using System;
     
     

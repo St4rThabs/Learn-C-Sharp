@@ -29,7 +29,7 @@ namespace Banco
             c.saldo = 100.0;
 
             if (c.Saca(100.0)){
-                MessageBox.Show("Saque realizado com sucesso!");s
+                MessageBox.Show("Saque realizado com sucesso!");
             } else
             {
                 MessageBox.Show("Saldo insuficiente");

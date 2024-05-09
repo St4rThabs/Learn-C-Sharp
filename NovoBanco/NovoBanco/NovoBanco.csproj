@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContaInvestimento.cs" />
-    <Compile Include="ContaCorrente.cs" />
+    <Compile Include="Contas\ContaInvestimento.cs" />
+    <Compile Include="Contas\ContaCorrente.cs" />
     <Compile Include="FormCadastroConta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,9 +57,9 @@
     <Compile Include="ITributavel.cs" />
     <Compile Include="SeguroDeVida.cs" />
     <Compile Include="TotalizadorDeContas.cs" />
-    <Compile Include="ContaPoupanca.cs" />
+    <Compile Include="Contas\ContaPoupanca.cs" />
     <Compile Include="Cliente.cs" />
-    <Compile Include="Conta.cs" />
+    <Compile Include="Contas\Conta.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NovoBanco.Contas;
 
 namespace NovoBanco
 {
@@ -140,11 +141,19 @@ namespace NovoBanco
 
             // Diferente de string, para converter uma string para um double/int precisa-se utilizar a classe convert
             double valor = Convert.ToDouble(valorDigitado);
-            selecionada.Deposita(valor);
+            try
+            {
+                selecionada.Deposita(valor);
 
-            // Atualização do saldo no formulário
-            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
-            MessageBox.Show("Sucesso!");
+                // Atualização do saldo no formulário
+                textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+                MessageBox.Show("Sucesso!");
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Argumento inválido");
+            }
+            
         }
 
         private void botaoSaque_Click(object sender, EventArgs e)
@@ -154,12 +163,23 @@ namespace NovoBanco
 
             string valorDigitado = textoValor.Text;
             double valor = Convert.ToDouble(valorDigitado);
-       
-            selecionada.Saca(valor);
 
-            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
-            MessageBox.Show("Sucesso!");
-          
+            try
+            {
+                selecionada.Saca(valor);
+                textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+                MessageBox.Show("Dinheiro Liberado!");
+            }
+            catch (SaldoInsuficienteException)
+            {
+                MessageBox.Show("Saldo insuficiente");
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Não é possível sacar um valor negativo");
+            }
+
+
         }
 
         private void comboContas_SelectedIndexChanged(object sender, EventArgs e)

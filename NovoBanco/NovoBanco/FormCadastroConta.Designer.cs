@@ -35,11 +35,12 @@ namespace NovoBanco
             this.textoTitular = new System.Windows.Forms.Label();
             this.botaoCadastro = new System.Windows.Forms.Button();
             this.groupBoxCadastro = new System.Windows.Forms.GroupBox();
+            this.lblTipoConta = new System.Windows.Forms.Label();
+            this.comboTipoConta = new System.Windows.Forms.ComboBox();
             this.lblTitular = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSubTitulo = new System.Windows.Forms.Label();
             this.pbxConta = new System.Windows.Forms.PictureBox();
-            this.comboTipoConta = new System.Windows.Forms.ComboBox();
             this.groupBoxCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxConta)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +49,7 @@ namespace NovoBanco
             // 
             this.textoNumero.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textoNumero.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textoNumero.Location = new System.Drawing.Point(97, 205);
+            this.textoNumero.Location = new System.Drawing.Point(97, 221);
             this.textoNumero.Name = "textoNumero";
             this.textoNumero.Size = new System.Drawing.Size(279, 20);
             this.textoNumero.TabIndex = 0;
@@ -56,7 +57,7 @@ namespace NovoBanco
             // 
             // textoTitularCadastro
             // 
-            this.textoTitularCadastro.Location = new System.Drawing.Point(97, 263);
+            this.textoTitularCadastro.Location = new System.Drawing.Point(97, 276);
             this.textoTitularCadastro.Name = "textoTitularCadastro";
             this.textoTitularCadastro.Size = new System.Drawing.Size(279, 20);
             this.textoTitularCadastro.TabIndex = 1;
@@ -66,7 +67,7 @@ namespace NovoBanco
             // 
             this.Numero.AutoSize = true;
             this.Numero.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Numero.Location = new System.Drawing.Point(24, 207);
+            this.Numero.Location = new System.Drawing.Point(24, 223);
             this.Numero.Name = "Numero";
             this.Numero.Size = new System.Drawing.Size(58, 16);
             this.Numero.TabIndex = 2;
@@ -97,6 +98,7 @@ namespace NovoBanco
             // groupBoxCadastro
             // 
             this.groupBoxCadastro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBoxCadastro.Controls.Add(this.lblTipoConta);
             this.groupBoxCadastro.Controls.Add(this.comboTipoConta);
             this.groupBoxCadastro.Controls.Add(this.lblTitular);
             this.groupBoxCadastro.Controls.Add(this.label2);
@@ -113,11 +115,30 @@ namespace NovoBanco
             this.groupBoxCadastro.TabIndex = 5;
             this.groupBoxCadastro.TabStop = false;
             // 
+            // lblTipoConta
+            // 
+            this.lblTipoConta.AutoSize = true;
+            this.lblTipoConta.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoConta.Location = new System.Drawing.Point(24, 169);
+            this.lblTipoConta.Name = "lblTipoConta";
+            this.lblTipoConta.Size = new System.Drawing.Size(152, 16);
+            this.lblTipoConta.TabIndex = 11;
+            this.lblTipoConta.Text = "Escolha o tipo de conta";
+            // 
+            // comboTipoConta
+            // 
+            this.comboTipoConta.FormattingEnabled = true;
+            this.comboTipoConta.Location = new System.Drawing.Point(182, 167);
+            this.comboTipoConta.Name = "comboTipoConta";
+            this.comboTipoConta.Size = new System.Drawing.Size(194, 21);
+            this.comboTipoConta.TabIndex = 10;
+            this.comboTipoConta.SelectedIndexChanged += new System.EventHandler(this.comboTipoConta_SelectedIndexChanged);
+            // 
             // lblTitular
             // 
             this.lblTitular.AutoSize = true;
             this.lblTitular.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitular.Location = new System.Drawing.Point(24, 265);
+            this.lblTitular.Location = new System.Drawing.Point(24, 278);
             this.lblTitular.Name = "lblTitular";
             this.lblTitular.Size = new System.Drawing.Size(49, 16);
             this.lblTitular.TabIndex = 9;
@@ -155,15 +176,6 @@ namespace NovoBanco
             this.pbxConta.TabStop = false;
             this.pbxConta.Click += new System.EventHandler(this.pbxConta_Click);
             // 
-            // comboTipoConta
-            // 
-            this.comboTipoConta.FormattingEnabled = true;
-            this.comboTipoConta.Location = new System.Drawing.Point(255, 155);
-            this.comboTipoConta.Name = "comboTipoConta";
-            this.comboTipoConta.Size = new System.Drawing.Size(121, 21);
-            this.comboTipoConta.TabIndex = 10;
-            this.comboTipoConta.SelectedIndexChanged += new System.EventHandler(this.comboTipoConta_SelectedIndexChanged);
-            // 
             // FormCadastroConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,5 +205,6 @@ namespace NovoBanco
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTitular;
         private System.Windows.Forms.ComboBox comboTipoConta;
+        private System.Windows.Forms.Label lblTipoConta;
     }
 }
