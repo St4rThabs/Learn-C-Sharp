@@ -21,7 +21,7 @@ namespace NovoBanco
         
 
         //private ContaPoupanca contaPoupanca;
-        //private ContaCorrente contaCorrente;
+        //private ContaCorrente contaCorrente;s
 
 
         // adicionando um método para adiocionar a conta cadastrada no FromCadastroConta
@@ -29,7 +29,7 @@ namespace NovoBanco
         {
             this.contas.Add(conta); // -> adiocionando conta
             this.numeroDeContas++;
-            comboContas.Items.Add(conta.Titular.Nome); //adicionando no comboBox
+            comboContas.Items.Add(conta); //adicionando no comboBox
         }
 
         public Form1()
@@ -135,9 +135,10 @@ namespace NovoBanco
         private void botaoDeposito_Click(object sender, EventArgs e)
         {
             string valorDigitado = textoValor.Text;
-            int indice = Convert.ToInt32(comboContas.SelectedIndex); //o indice escolhido serve para saber de qual elemento do array queremos pegar os dados
+            //int indice = Convert.ToInt32(comboContas.SelectedIndex); //o indice escolhido serve para saber de qual elemento do array queremos pegar os dados
 
-            Conta selecionada = this.contas[indice]; // a variável existe para armazenar os dados da conta do indice escolhido
+            Conta selecionada = (Conta)comboContas.SelectedItem; // a variável existe para armazenar os dados da conta do indice escolhido 
+            // como comboContas agora recebe um obejto invés de string (por sobrescrever o método ToString), não é mais neceário usar a variável indice
 
             // Diferente de string, para converter uma string para um double/int precisa-se utilizar a classe convert
             double valor = Convert.ToDouble(valorDigitado);
@@ -158,8 +159,26 @@ namespace NovoBanco
 
         private void botaoSaque_Click(object sender, EventArgs e)
         {
-            int indice = Convert.ToInt32(comboContas.SelectedIndex);
-            Conta selecionada = this.contas[indice];
+            //int indice = Convert.ToInt32(comboContas.SelectedIndex); --> segue a mesma premissa do botaoDeposito
+            //Conta selecionada = this.contas[indice]; --> forma antiga (utilizando o indice) de conseguir acessar a conta para realizar o saque
+
+            /*
+             existem ocasiões em que não precisamos/queremos utilizar o ToString do próprio objeto
+             para mostrar uma lista no comboBox. Nesses casos, podemos simplesmente usar uma
+             propriedade do comboBox: DisplayMember.
+
+             O DisplayMember serve para vocês escolher o tipo de propriedade que será adiconado na
+             sua lista do comboBox. Por exemplo:
+
+            Conta c = new ContaCorrente() { Numero = 1 };
+            Conta c2 = new ContaCorrente() { Numero = 2 };
+            comboContas.Items.Add(c);
+            comboContas.Items.Add(c2);
+            comboContas.DisplayMember = "Numero";
+
+             * */
+
+            Conta selecionada = (Conta)comboContas.SelectedItem;
 
             string valorDigitado = textoValor.Text;
             double valor = Convert.ToDouble(valorDigitado);
@@ -178,7 +197,6 @@ namespace NovoBanco
             {
                 MessageBox.Show("Não é possível sacar um valor negativo");
             }
-
 
         }
 

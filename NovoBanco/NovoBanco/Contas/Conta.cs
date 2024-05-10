@@ -39,6 +39,11 @@ namespace NovoBanco.Contas
             
          }
         */
+
+        public override string ToString()
+        {
+            return char.ToUpper(this.Titular.Nome[0])+ this.Titular.Nome.Substring(1);
+        }
     }
     public class SaldoInsuficienteException : Exception
     {
