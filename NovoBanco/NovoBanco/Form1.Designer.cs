@@ -30,7 +30,6 @@ namespace NovoBanco
         private void InitializeComponent()
         {
             this.textoTitular = new System.Windows.Forms.TextBox();
-            this.textoNumero = new System.Windows.Forms.TextBox();
             this.textoSaldo = new System.Windows.Forms.TextBox();
             this.textoValor = new System.Windows.Forms.TextBox();
             this.Deposita = new System.Windows.Forms.Button();
@@ -40,11 +39,16 @@ namespace NovoBanco
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textoNumero = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textoBuscaTitular = new System.Windows.Forms.TextBox();
+            this.botaoBusca = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.comboContas = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.botaoNovaConta = new System.Windows.Forms.Button();
             this.botaoImpostos = new System.Windows.Forms.Button();
+            this.botaoRelatorio = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,14 +61,6 @@ namespace NovoBanco
             this.textoTitular.TabIndex = 0;
             this.textoTitular.Text = "Texto da minha caixa da texto";
             this.textoTitular.TextChanged += new System.EventHandler(this.textoTitular_TextChanged);
-            // 
-            // textoNumero
-            // 
-            this.textoNumero.Location = new System.Drawing.Point(107, 97);
-            this.textoNumero.Name = "textoNumero";
-            this.textoNumero.Size = new System.Drawing.Size(339, 20);
-            this.textoNumero.TabIndex = 1;
-            this.textoNumero.TextChanged += new System.EventHandler(this.textoNumero_TextChanged);
             // 
             // textoSaldo
             // 
@@ -172,9 +168,20 @@ namespace NovoBanco
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conta";
             // 
+            // textoNumero
+            // 
+            this.textoNumero.Location = new System.Drawing.Point(107, 97);
+            this.textoNumero.Name = "textoNumero";
+            this.textoNumero.Size = new System.Drawing.Size(339, 20);
+            this.textoNumero.TabIndex = 1;
+            this.textoNumero.TextChanged += new System.EventHandler(this.textoNumero_TextChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox2.Controls.Add(this.textoBuscaTitular);
+            this.groupBox2.Controls.Add(this.botaoBusca);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.comboContas);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(12, 17);
@@ -184,12 +191,44 @@ namespace NovoBanco
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busca de Conta";
             // 
+            // textoBuscaTitular
+            // 
+            this.textoBuscaTitular.Location = new System.Drawing.Point(153, 64);
+            this.textoBuscaTitular.Name = "textoBuscaTitular";
+            this.textoBuscaTitular.Size = new System.Drawing.Size(207, 20);
+            this.textoBuscaTitular.TabIndex = 10;
+            // 
+            // botaoBusca
+            // 
+            this.botaoBusca.BackColor = System.Drawing.Color.CadetBlue;
+            this.botaoBusca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PowderBlue;
+            this.botaoBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoBusca.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botaoBusca.ForeColor = System.Drawing.Color.White;
+            this.botaoBusca.Location = new System.Drawing.Point(366, 60);
+            this.botaoBusca.Name = "botaoBusca";
+            this.botaoBusca.Size = new System.Drawing.Size(80, 28);
+            this.botaoBusca.TabIndex = 10;
+            this.botaoBusca.Text = "Buscar";
+            this.botaoBusca.UseVisualStyleBackColor = false;
+            this.botaoBusca.Click += new System.EventHandler(this.botaoBusca_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(39, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 14);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Buscar por titular";
+            // 
             // comboContas
             // 
             this.comboContas.FormattingEnabled = true;
-            this.comboContas.Location = new System.Drawing.Point(129, 47);
+            this.comboContas.Location = new System.Drawing.Point(153, 29);
             this.comboContas.Name = "comboContas";
-            this.comboContas.Size = new System.Drawing.Size(317, 21);
+            this.comboContas.Size = new System.Drawing.Size(293, 21);
             this.comboContas.TabIndex = 14;
             this.comboContas.SelectedIndexChanged += new System.EventHandler(this.comboContas_SelectedIndexChanged);
             // 
@@ -197,7 +236,7 @@ namespace NovoBanco
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(39, 50);
+            this.label6.Location = new System.Drawing.Point(39, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 14);
             this.label6.TabIndex = 13;
@@ -231,7 +270,7 @@ namespace NovoBanco
             this.botaoImpostos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botaoImpostos.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botaoImpostos.ForeColor = System.Drawing.Color.White;
-            this.botaoImpostos.Location = new System.Drawing.Point(384, 406);
+            this.botaoImpostos.Location = new System.Drawing.Point(192, 406);
             this.botaoImpostos.Name = "botaoImpostos";
             this.botaoImpostos.Size = new System.Drawing.Size(100, 28);
             this.botaoImpostos.TabIndex = 15;
@@ -239,12 +278,31 @@ namespace NovoBanco
             this.botaoImpostos.UseVisualStyleBackColor = false;
             this.botaoImpostos.Click += new System.EventHandler(this.botaoImpostos_Click);
             // 
+            // botaoRelatorio
+            // 
+            this.botaoRelatorio.BackColor = System.Drawing.Color.CadetBlue;
+            this.botaoRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.botaoRelatorio.FlatAppearance.BorderColor = System.Drawing.Color.CadetBlue;
+            this.botaoRelatorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PowderBlue;
+            this.botaoRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoRelatorio.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botaoRelatorio.ForeColor = System.Drawing.Color.White;
+            this.botaoRelatorio.Location = new System.Drawing.Point(384, 406);
+            this.botaoRelatorio.Name = "botaoRelatorio";
+            this.botaoRelatorio.Size = new System.Drawing.Size(100, 28);
+            this.botaoRelatorio.TabIndex = 16;
+            this.botaoRelatorio.Text = "Relatórios";
+            this.botaoRelatorio.UseVisualStyleBackColor = false;
+            this.botaoRelatorio.Click += new System.EventHandler(this.botaoRelatorio_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(496, 441);
+            this.Controls.Add(this.botaoRelatorio);
             this.Controls.Add(this.botaoImpostos);
             this.Controls.Add(this.botaoNovaConta);
             this.Controls.Add(this.groupBox2);
@@ -263,7 +321,6 @@ namespace NovoBanco
         #endregion
 
         private System.Windows.Forms.TextBox textoTitular;
-        private System.Windows.Forms.TextBox textoNumero;
         private System.Windows.Forms.TextBox textoSaldo;
         private System.Windows.Forms.TextBox textoValor;
         private System.Windows.Forms.Button Deposita;
@@ -278,6 +335,11 @@ namespace NovoBanco
         private System.Windows.Forms.Button botaoNovaConta;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button botaoImpostos;
+        private System.Windows.Forms.TextBox textoNumero;
+        private System.Windows.Forms.TextBox textoBuscaTitular;
+        private System.Windows.Forms.Button botaoBusca;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button botaoRelatorio;
     }
 }
 

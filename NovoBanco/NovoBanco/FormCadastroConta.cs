@@ -15,7 +15,7 @@ namespace NovoBanco
     public partial class FormCadastroConta : Form
     {
         private ICollection<string> devedores;
-        // modificando o construtor da classe FromCadastroConta para receber as instância do Form1
+        // modificando o construtor da classe FromCadastroConta para receber as instâncias do Form1
         private Form1 formPrincipal;
         private Conta novaConta;
         

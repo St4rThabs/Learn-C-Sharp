@@ -16,9 +16,11 @@ namespace NovoBanco
         // Para ser utilizada em vários métodos declaramos o atributo de referência aqui
         private List<Conta> contas;
 
+        private Dictionary<string, Conta> dicionario;
+        
+
         private int numeroDeContas; // atributo que será utilizado para saber o numero de contas existentes
 
-        
 
         //private ContaPoupanca contaPoupanca;
         //private ContaCorrente contaCorrente;s
@@ -29,7 +31,8 @@ namespace NovoBanco
         {
             this.contas.Add(conta); // -> adiocionando conta
             this.numeroDeContas++;
-            comboContas.Items.Add(conta); //adicionando no comboBox
+            this.dicionario.Add(conta.Titular.Nome, conta); // adicionando o itens no dicionario
+            comboContas.Items.Add(conta); // adicionando itens a comboBox
         }
 
         public Form1()
@@ -45,6 +48,8 @@ namespace NovoBanco
             //this.contaCorrente = new ContaCorrente(); // para utilizar o conta corrente, basta substituir tudo que tem contaPoupanca, pois ambos herdam de conta, logo tem os mesmos atributos
 
             TotalizadorDeContas t = new TotalizadorDeContas();
+
+            this.dicionario = new Dictionary<string, Conta>(); // inicializando o dicionario
 
 
             /*
@@ -112,6 +117,8 @@ namespace NovoBanco
 
         }
 
+        #region  --- Campos de texto ---
+
         private void textoTitular_TextChanged(object sender, EventArgs e)
         {
             
@@ -132,6 +139,10 @@ namespace NovoBanco
 
         }
 
+        #endregion
+
+
+        #region --- Botões ---
         private void botaoDeposito_Click(object sender, EventArgs e)
         {
             string valorDigitado = textoValor.Text;
@@ -233,48 +244,86 @@ namespace NovoBanco
 
             MessageBox.Show("Total: " + totalizador.Total);
         }
+
+        private void botaoBusca_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // procurando o nome do titular que foi procurando no campo de texto
+                string nomeTitular = textoBuscaTitular.Text;
+
+
+                // usando o dicionario para fazer a busca
+                Conta conta = dicionario[nomeTitular];
+
+                // mostrando a conta que foi encontrada
+                comboContas.SelectedItem = conta;
+            }
+            catch (KeyNotFoundException)
+            {
+                MessageBox.Show("Titular não encontrado");
+            }
+            
+
+            /* 
+            -> usando essa forma só vai sobrescrever a ação que o comboBox já faz quando selecionamos algum item
+
+            textoTitular.Text = conta.Titular.Nome;
+            textoNumero.Text = Convert.ToString(conta.Numero);
+            textoSaldo.Text = Convert.ToString(conta.Saldo);
+            */
+        }
+
+        private void botaoRelatorio_Click(object sender, EventArgs e)
+        {
+            FormRelatorios form = new FormRelatorios(this.contas);
+            form.ShowDialog();
+        }
+
+        #endregion
+    }
+
+}
+
+/* ---- Exemplo de classe abstrata e interface (explicação no caderno) ----
+
+abstract class Animal
+{
+    public double peso = 0.0;
+
+    public virtual string FazerSom()
+    {
+        return "";
     }
 }
 
-    /* ---- Exemplo de classe abstrata e interface (explicação no caderno) ----
-     
-    abstract class Animal
+interface IAnimavel
+{
+    string FazerSom();
+}
+
+class Cachorro : Animal
+{
+    public c string FazerSom()
     {
-        public double peso = 0.0;
-
-        public virtual string FazerSom()
-        {
-            return "";
-        }
+        return "Au au";
     }
+}
 
-    interface IAnimavel
+class Leao : Animal
+{
+    public override string FazerSom()
     {
-        string FazerSom();
+        return "Raaaaaaaaw";
     }
+}
 
-    class Cachorro : Animal
-    {
-        public c string FazerSom()
-        {
-            return "Au au";
-        }
-    }
+var cachorro = new Cachorro();
 
-    class Leao : Animal
-    {
-        public override string FazerSom()
-        {
-            return "Raaaaaaaaw";
-        }
-    }
+var leao = new Leao();
 
-    var cachorro = new Cachorro();
+cachorro.peso = 11.5;
 
-    var leao = new Leao();
-
-    cachorro.peso = 11.5;
-
-            leao.peso = 500.0;
-    */
+        leao.peso = 500.0;
+*/
 
