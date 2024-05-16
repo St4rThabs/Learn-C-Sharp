@@ -1,0 +1,7 @@
+C:\Users\thabata.lima\source\repos\UsandoOConsoleApplication\UsandoOConsoleApplication\obj\Debug\UsandoOConsoleApplication.csproj.AssemblyReference.cache
+C:\Users\thabata.lima\source\repos\UsandoOConsoleApplication\UsandoOConsoleApplication\obj\Debug\UsandoOConsoleApplication.csproj.CoreCompileInputs.cache
+C:\Users\thabata.lima\source\repos\UsandoOConsoleApplication\UsandoOConsoleApplication\bin\Debug\UsandoOConsoleApplication.exe.config
+C:\Users\thabata.lima\source\repos\UsandoOConsoleApplication\UsandoOConsoleApplication\bin\Debug\UsandoOConsoleApplication.exe
+C:\Users\thabata.lima\source\repos\UsandoOConsoleApplication\UsandoOConsoleApplication\bin\Debug\UsandoOConsoleApplication.pdb
+C:\Users\thabata.lima\source\repos\UsandoOConsoleApplication\UsandoOConsoleApplication\obj\Debug\UsandoOConsoleApplication.exe
+C:\Users\thabata.lima\source\repos\UsandoOConsoleApplication\UsandoOConsoleApplication\obj\Debug\UsandoOConsoleApplication.pdb
