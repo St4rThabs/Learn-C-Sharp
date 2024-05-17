@@ -58,7 +58,7 @@ namespace EditorDeTexto
             string textoDoEditor = textoConteudo.Text; // recebe o que está escrito no campo de texto do editor
             int resultado = textoDoEditor.IndexOf(busca); // retorna a posição da onde está escrito o que foi inserido no campo de busca
 
-            if (resultado >= 0) // faz a verificação se a posição encontrada é maior que 0. Se for, quer dizer que foi encontrado
+            if (resultado >= 0) // faz a verificação se a posição encontrada for menor que 0, quer dizer que a palavra não foi encontrada
             {
                 MessageBox.Show("Texto " + busca + " encontrado");
             }
@@ -67,5 +67,73 @@ namespace EditorDeTexto
                 MessageBox.Show("Texto não encontrado");
             }
         }
+
+        private void botaoReplace_Click(object sender, EventArgs e)
+        {
+            string busca = textoBusca.Text; ;
+            string textoDoEditor = textoConteudo.Text;
+            string replace = textoReplace.Text;
+
+            if (!string.IsNullOrEmpty(busca) && textoDoEditor.Contains(busca)) /* verifica se o campoBusca não está vazio e se o
+                                                                               texto do editor contem o que estamos buscando */
+            {
+                textoConteudo.Text = textoDoEditor.Replace(busca, replace); // faz o replace do que foi encontrado em busca para o que queremos substitutir
+            }
+            else
+            {
+                MessageBox.Show("Substituição não realizada");
+            }
+
+
+        }
+
+        private void botaoMaisuculo_Click(object sender, EventArgs e)
+        {
+            int inicioSelecao = textoConteudo.SelectionStart; /* A propriedade SelectionStart nos diz em qual posição, começando em 0, do texto
+                                                              o usuário iniciou a seleção. */
+
+            int tamanhoSelecao = textoConteudo.SelectionLength; // SelectionLength nos devolve quantos caracteres do texto estão selecionados atualmente.
+
+            string textoSelecionado = textoConteudo.Text.Substring(inicioSelecao, tamanhoSelecao); // a substring vai armazenar a seleção feita
+
+            string antes = textoConteudo.Text.Substring(0, inicioSelecao); // texto antes da seleção
+
+            string depois = textoConteudo.Text.Substring(inicioSelecao + tamanhoSelecao); // texto depois da seleção
+
+            textoConteudo.Text = antes + textoSelecionado.ToUpper() + depois; // redefinindo o texto
+
+        }
+
+        private void botaoMinusculo_Click(object sender, EventArgs e)
+        {
+            int inicioSelecao = textoConteudo.SelectionStart;
+            int tamanhoSelecao = textoConteudo.SelectionLength;
+
+            string textoSelecionado = textoConteudo.Text.Substring(inicioSelecao, tamanhoSelecao); /* o primeiro parâmetro da substring é o ponto de partida
+                                                                                                   que ela vai começar a armazenar os carecteres, o segundo
+                                                                                                   é a quantidade de caracteres  que ela vai armazenar. */
+
+            string antes = textoConteudo.Text.Substring(0, inicioSelecao); // armazena o texto antes da seleção, então não vai alterar
+            string depois = textoConteudo.Text.Substring(inicioSelecao + tamanhoSelecao); 
+
+            textoConteudo.Text = antes + textoSelecionado.ToLower() + depois;
+
+
+            /*  -- Deixando todo o texto em minúsculo: --
+            
+            string textoDoEditor = textoConteudo.Text.ToLower();
+
+            using (StreamWriter escritor = new StreamWriter("texto.txt"))
+            {
+                escritor.Write(textoDoEditor); // escreve no arquivo o resultado do replace
+            }
+
+            using (StreamReader leitor = new StreamReader("texto.txt")) // lendo novaqmente o arquivo para mostrar que o replace foi feito
+            {
+                textoConteudo.Text = leitor.ReadToEnd();
+            }
+            */
+        }
+
     }
 }
