@@ -66,7 +66,7 @@ namespace NovoBanco
                 case 1:
                     if (!ehDevedor)
                     {
-                        this.novaConta = new ContaInvestimento();
+                        this.novaConta = new ContaPoupanca();
                         novaConta.Titular = new Cliente(textoTitularCadastro.Text);
                         textoNumero.Text = Convert.ToString(Conta.ProximoNumero()); // -> a conta agora cria o próprio número, então não precisa mais do textoNumero.Text, basta utilizar o método estático
 
