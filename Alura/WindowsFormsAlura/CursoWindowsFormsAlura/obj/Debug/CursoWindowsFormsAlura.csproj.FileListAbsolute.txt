@@ -1,0 +1,12 @@
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\bin\Debug\CursoWindowsFormsAlura.exe.config
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\bin\Debug\CursoWindowsFormsAlura.exe
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\bin\Debug\CursoWindowsFormsAlura.pdb
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.csproj.AssemblyReference.cache
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Properties.Resources.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.csproj.GenerateResource.cache
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.csproj.CoreCompileInputs.cache
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.exe
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.pdb
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_HelloWorld.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_DemonstracaoKey.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_ValidaSenha.resources

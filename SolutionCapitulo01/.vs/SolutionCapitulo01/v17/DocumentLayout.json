@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{9559C3A5-96DF-4797-8D37-8BBBF6138E52}|TrocaDeValores\\TrocaDeValores.csproj|c:\\users\\thabata.lima\\source\\repos\\solutioncapitulo01\\trocadevalores\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9559C3A5-96DF-4797-8D37-8BBBF6138E52}|TrocaDeValores\\TrocaDeValores.csproj|solutionrelative:trocadevalores\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9559C3A5-96DF-4797-8D37-8BBBF6138E52}|TrocaDeValores\\TrocaDeValores.csproj|c:\\users\\thabata.lima\\source\\repos\\solutioncapitulo01\\trocadevalores\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9559C3A5-96DF-4797-8D37-8BBBF6138E52}|TrocaDeValores\\TrocaDeValores.csproj|solutionrelative:trocadevalores\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,16 +18,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\TrocaDeValores\\Form1.cs",
+              "RelativeDocumentMoniker": "TrocaDeValores\\Form1.cs",
+              "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\TrocaDeValores\\Form1.cs*",
+              "RelativeToolTip": "TrocaDeValores\\Form1.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T17:38:09.723Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\TrocaDeValores\\Form1.cs",
               "RelativeDocumentMoniker": "TrocaDeValores\\Form1.cs",
-              "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\TrocaDeValores\\Form1.cs [Projeto]",
-              "RelativeToolTip": "TrocaDeValores\\Form1.cs [Projeto]",
+              "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\TrocaDeValores\\Form1.cs [Projeto]*",
+              "RelativeToolTip": "TrocaDeValores\\Form1.cs [Projeto]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-20T14:50:01.944Z",
               "EditorCaption": " [Projeto]"
