@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             panel1 = new Panel();
-            linkLabel1 = new LinkLabel();
+            linkFormCadastro = new LinkLabel();
             textoPassword = new MaskedTextBox();
             botaoLogin = new Button();
             lblPassword = new Label();
@@ -46,7 +46,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Snow;
-            panel1.Controls.Add(linkLabel1);
+            panel1.Controls.Add(linkFormCadastro);
             panel1.Controls.Add(textoPassword);
             panel1.Controls.Add(botaoLogin);
             panel1.Controls.Add(lblPassword);
@@ -60,17 +60,18 @@
             panel1.Size = new Size(600, 560);
             panel1.TabIndex = 3;
             // 
-            // linkLabel1
+            // linkFormCadastro
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkColor = Color.DimGray;
-            linkLabel1.Location = new Point(331, 414);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(176, 15);
-            linkLabel1.TabIndex = 10;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Don't have an account? Register";
-            linkLabel1.VisitedLinkColor = Color.DarkSlateBlue;
+            linkFormCadastro.AutoSize = true;
+            linkFormCadastro.LinkColor = Color.DimGray;
+            linkFormCadastro.Location = new Point(331, 414);
+            linkFormCadastro.Name = "linkFormCadastro";
+            linkFormCadastro.Size = new Size(176, 15);
+            linkFormCadastro.TabIndex = 10;
+            linkFormCadastro.TabStop = true;
+            linkFormCadastro.Text = "Don't have an account? Register";
+            linkFormCadastro.VisitedLinkColor = Color.DarkSlateBlue;
+            linkFormCadastro.LinkClicked += linkFormCadastro_LinkClicked;
             // 
             // textoPassword
             // 
@@ -122,7 +123,7 @@
             // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.Font = new Font("Segoe UI", 8.5F);
-            lblSubtitulo.Location = new Point(309, 114);
+            lblSubtitulo.Location = new Point(310, 118);
             lblSubtitulo.Name = "lblSubtitulo";
             lblSubtitulo.Size = new Size(208, 15);
             lblSubtitulo.TabIndex = 5;
@@ -143,11 +144,11 @@
             // 
             lblWelcome.AutoSize = true;
             lblWelcome.Font = new Font("Segoe UI", 32F);
-            lblWelcome.Location = new Point(321, 55);
+            lblWelcome.Location = new Point(260, 59);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(199, 59);
+            lblWelcome.Size = new Size(311, 59);
             lblWelcome.TabIndex = 2;
-            lblWelcome.Text = "Welcome";
+            lblWelcome.Text = "Welcome Back!";
             lblWelcome.Click += lblWelcome_Click;
             // 
             // pictureBox1
@@ -188,6 +189,6 @@
         private Label lblUsername;
         private Button botaoLogin;
         private MaskedTextBox textoPassword;
-        private LinkLabel linkLabel1;
+        private LinkLabel linkFormCadastro;
     }
 }

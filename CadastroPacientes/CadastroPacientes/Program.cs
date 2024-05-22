@@ -1,3 +1,5 @@
+using CadastroPacientes.View;
+
 namespace CadastroPacientes
 {
     internal static class Program

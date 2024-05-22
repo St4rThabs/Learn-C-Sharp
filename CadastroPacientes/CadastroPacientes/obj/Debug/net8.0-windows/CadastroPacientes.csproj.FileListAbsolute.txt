@@ -34,3 +34,5 @@ C:\Users\thabata.lima\source\repos\CadastroPacientes\CadastroPacientes\obj\Debug
 C:\Users\thabata.lima\source\repos\CadastroPacientes\CadastroPacientes\obj\Debug\net8.0-windows\CadastroPacientes.pdb
 C:\Users\thabata.lima\source\repos\CadastroPacientes\CadastroPacientes\obj\Debug\net8.0-windows\CadastroPacientes.genruntimeconfig.cache
 C:\Users\thabata.lima\source\repos\CadastroPacientes\CadastroPacientes\obj\Debug\net8.0-windows\ref\CadastroPacientes.dll
+C:\Users\thabata.lima\source\repos\CadastroPacientes\CadastroPacientes\obj\Debug\net8.0-windows\CadastroPacientes.View.FormCadastro.resources
+C:\Users\thabata.lima\source\repos\CadastroPacientes\CadastroPacientes\obj\Debug\net8.0-windows\CadastroPacientes.Properties.Resources.resources
