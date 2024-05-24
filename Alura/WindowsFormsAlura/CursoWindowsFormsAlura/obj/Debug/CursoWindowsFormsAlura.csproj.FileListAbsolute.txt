@@ -12,3 +12,5 @@ C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_ValidaSenha.resources
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_Mascara.resources
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_ValidaCPF.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_ValidaCPF2.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_Principal.resources

@@ -19,7 +19,8 @@ namespace CursoWindowsFormsAlura
 
         private void btn_Sair_Click(object sender, EventArgs e)
         {
-            Application.Exit(); // encerra a aplicação
+            //Application.Exit(); // encerra a aplicação
+            this.Close(); // vai encerrar apenas o formulário
         }
 
         private void btn_Modifica_Click(object sender, EventArgs e)
