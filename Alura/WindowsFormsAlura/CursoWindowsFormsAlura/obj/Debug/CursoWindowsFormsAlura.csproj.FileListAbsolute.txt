@@ -14,3 +14,8 @@ C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_ValidaCPF.resources
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_ValidaCPF2.resources
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_Principal.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\bin\Debug\CursoWindowsFormsBiblioteca.dll
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\bin\Debug\CursoWindowsFormsBiblioteca.pdb
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.csproj.CopyComplete
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_Principal_Menu.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Debug\CursoWindowsFormsAlura.Frm_Principal_Menu_MDI.resources

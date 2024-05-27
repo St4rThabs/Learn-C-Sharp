@@ -1,0 +1,16 @@
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\bin\Release\CursoWindowsFormsAlura.exe.config
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\bin\Release\CursoWindowsFormsAlura.exe
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\bin\Release\CursoWindowsFormsAlura.pdb
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.csproj.AssemblyReference.cache
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_DemonstracaoKey.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_HelloWorld.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_Mascara.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_Principal.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_ValidaCPF.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_ValidaCPF2.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_ValidaSenha.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Properties.Resources.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.csproj.GenerateResource.cache
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.csproj.CoreCompileInputs.cache
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.exe
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.pdb

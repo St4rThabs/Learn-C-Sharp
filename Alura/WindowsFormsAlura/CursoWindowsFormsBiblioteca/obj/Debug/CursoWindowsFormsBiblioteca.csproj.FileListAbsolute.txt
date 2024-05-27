@@ -1,0 +1,5 @@
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.csproj.CoreCompileInputs.cache
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\bin\Debug\CursoWindowsFormsBiblioteca.dll
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\bin\Debug\CursoWindowsFormsBiblioteca.pdb
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.dll
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.pdb
