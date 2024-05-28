@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9559C3A5-96DF-4797-8D37-8BBBF6138E52}|TrocaDeValores\\TrocaDeValores.csproj|c:\\users\\thabata.lima\\source\\repos\\solutioncapitulo01\\trocadevalores\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9559C3A5-96DF-4797-8D37-8BBBF6138E52}|TrocaDeValores\\TrocaDeValores.csproj|solutionrelative:trocadevalores\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{56DACAC4-8660-40D4-AE75-2CDC7F62F338}|PesoIdeal\\PesoIdeal.csproj|c:\\users\\thabata.lima\\source\\repos\\solutioncapitulo01\\pesoideal\\calculopesoideal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{56DACAC4-8660-40D4-AE75-2CDC7F62F338}|PesoIdeal\\PesoIdeal.csproj|solutionrelative:pesoideal\\calculopesoideal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9559C3A5-96DF-4797-8D37-8BBBF6138E52}|TrocaDeValores\\TrocaDeValores.csproj|c:\\users\\thabata.lima\\source\\repos\\solutioncapitulo01\\trocadevalores\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9559C3A5-96DF-4797-8D37-8BBBF6138E52}|TrocaDeValores\\TrocaDeValores.csproj|solutionrelative:trocadevalores\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56DACAC4-8660-40D4-AE75-2CDC7F62F338}|PesoIdeal\\PesoIdeal.csproj|c:\\users\\thabata.lima\\source\\repos\\solutioncapitulo01\\pesoideal\\calculopesoideal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56DACAC4-8660-40D4-AE75-2CDC7F62F338}|PesoIdeal\\PesoIdeal.csproj|solutionrelative:pesoideal\\calculopesoideal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\TrocaDeValores\\Form1.cs",
-              "RelativeDocumentMoniker": "TrocaDeValores\\Form1.cs",
-              "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\TrocaDeValores\\Form1.cs*",
-              "RelativeToolTip": "TrocaDeValores\\Form1.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Title": "CalculoPesoIdeal.cs",
+              "DocumentMoniker": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\PesoIdeal\\CalculoPesoIdeal.cs",
+              "RelativeDocumentMoniker": "PesoIdeal\\CalculoPesoIdeal.cs",
+              "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\PesoIdeal\\CalculoPesoIdeal.cs",
+              "RelativeToolTip": "PesoIdeal\\CalculoPesoIdeal.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T17:38:09.723Z",
+              "WhenOpened": "2024-05-28T12:07:11.997Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\TrocaDeValores\\Form1.cs",
-              "RelativeDocumentMoniker": "TrocaDeValores\\Form1.cs",
-              "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\TrocaDeValores\\Form1.cs [Projeto]*",
-              "RelativeToolTip": "TrocaDeValores\\Form1.cs [Projeto]*",
+              "Title": "CalculoPesoIdeal.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\PesoIdeal\\CalculoPesoIdeal.cs",
+              "RelativeDocumentMoniker": "PesoIdeal\\CalculoPesoIdeal.cs",
+              "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\PesoIdeal\\CalculoPesoIdeal.cs [Design]",
+              "RelativeToolTip": "PesoIdeal\\CalculoPesoIdeal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T14:50:01.944Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2024-05-28T12:05:07.963Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
