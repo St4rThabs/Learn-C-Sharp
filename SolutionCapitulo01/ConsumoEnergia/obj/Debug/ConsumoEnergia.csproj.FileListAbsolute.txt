@@ -1,0 +1,10 @@
+C:\Users\thabata.lima\source\repos\SolutionCapitulo01\ConsumoEnergia\obj\Debug\ConsumoEnergia.csproj.AssemblyReference.cache
+C:\Users\thabata.lima\source\repos\SolutionCapitulo01\ConsumoEnergia\obj\Debug\ConsumoEnergia.FormConsumo.resources
+C:\Users\thabata.lima\source\repos\SolutionCapitulo01\ConsumoEnergia\obj\Debug\ConsumoEnergia.Properties.Resources.resources
+C:\Users\thabata.lima\source\repos\SolutionCapitulo01\ConsumoEnergia\obj\Debug\ConsumoEnergia.csproj.GenerateResource.cache
+C:\Users\thabata.lima\source\repos\SolutionCapitulo01\ConsumoEnergia\obj\Debug\ConsumoEnergia.csproj.CoreCompileInputs.cache
+C:\Users\thabata.lima\source\repos\SolutionCapitulo01\ConsumoEnergia\bin\Debug\ConsumoEnergia.exe.config
+C:\Users\thabata.lima\source\repos\SolutionCapitulo01\ConsumoEnergia\bin\Debug\ConsumoEnergia.exe
+C:\Users\thabata.lima\source\repos\SolutionCapitulo01\ConsumoEnergia\bin\Debug\ConsumoEnergia.pdb
+C:\Users\thabata.lima\source\repos\SolutionCapitulo01\ConsumoEnergia\obj\Debug\ConsumoEnergia.exe
+C:\Users\thabata.lima\source\repos\SolutionCapitulo01\ConsumoEnergia\obj\Debug\ConsumoEnergia.pdb

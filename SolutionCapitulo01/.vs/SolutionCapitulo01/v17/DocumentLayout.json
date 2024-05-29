@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56DACAC4-8660-40D4-AE75-2CDC7F62F338}|PesoIdeal\\PesoIdeal.csproj|c:\\users\\thabata.lima\\source\\repos\\solutioncapitulo01\\pesoideal\\calculopesoideal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{56DACAC4-8660-40D4-AE75-2CDC7F62F338}|PesoIdeal\\PesoIdeal.csproj|solutionrelative:pesoideal\\calculopesoideal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{55405B74-D8FA-4759-99FA-8897854EE2D5}|ConsumoEnergia\\ConsumoEnergia.csproj|c:\\users\\thabata.lima\\source\\repos\\solutioncapitulo01\\consumoenergia\\formconsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{55405B74-D8FA-4759-99FA-8897854EE2D5}|ConsumoEnergia\\ConsumoEnergia.csproj|solutionrelative:consumoenergia\\formconsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55405B74-D8FA-4759-99FA-8897854EE2D5}|ConsumoEnergia\\ConsumoEnergia.csproj|c:\\users\\thabata.lima\\source\\repos\\solutioncapitulo01\\consumoenergia\\formconsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55405B74-D8FA-4759-99FA-8897854EE2D5}|ConsumoEnergia\\ConsumoEnergia.csproj|solutionrelative:consumoenergia\\formconsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56DACAC4-8660-40D4-AE75-2CDC7F62F338}|PesoIdeal\\PesoIdeal.csproj|c:\\users\\thabata.lima\\source\\repos\\solutioncapitulo01\\pesoideal\\calculopesoideal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56DACAC4-8660-40D4-AE75-2CDC7F62F338}|PesoIdeal\\PesoIdeal.csproj|solutionrelative:pesoideal\\calculopesoideal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56DACAC4-8660-40D4-AE75-2CDC7F62F338}|PesoIdeal\\PesoIdeal.csproj|C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\pesoideal\\calculopesoideal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{56DACAC4-8660-40D4-AE75-2CDC7F62F338}|PesoIdeal\\PesoIdeal.csproj|solutionrelative:pesoideal\\calculopesoideal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +31,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "FormConsumo.cs",
+              "DocumentMoniker": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\ConsumoEnergia\\FormConsumo.cs",
+              "RelativeDocumentMoniker": "ConsumoEnergia\\FormConsumo.cs",
+              "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\ConsumoEnergia\\FormConsumo.cs",
+              "RelativeToolTip": "ConsumoEnergia\\FormConsumo.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T16:37:00.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormConsumo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\ConsumoEnergia\\FormConsumo.cs",
+              "RelativeDocumentMoniker": "ConsumoEnergia\\FormConsumo.cs",
+              "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\ConsumoEnergia\\FormConsumo.cs [Design]",
+              "RelativeToolTip": "ConsumoEnergia\\FormConsumo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:34:24.063Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CalculoPesoIdeal.cs",
               "DocumentMoniker": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\PesoIdeal\\CalculoPesoIdeal.cs",
               "RelativeDocumentMoniker": "PesoIdeal\\CalculoPesoIdeal.cs",
               "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\PesoIdeal\\CalculoPesoIdeal.cs",
               "RelativeToolTip": "PesoIdeal\\CalculoPesoIdeal.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACEAAAAAAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwCAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-28T12:07:11.997Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "CalculoPesoIdeal.cs [Design]",
               "DocumentMoniker": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\PesoIdeal\\CalculoPesoIdeal.cs",
               "RelativeDocumentMoniker": "PesoIdeal\\CalculoPesoIdeal.cs",
               "ToolTip": "C:\\Users\\thabata.lima\\source\\repos\\SolutionCapitulo01\\PesoIdeal\\CalculoPesoIdeal.cs [Design]",
               "RelativeToolTip": "PesoIdeal\\CalculoPesoIdeal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T12:05:07.963Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-28T12:05:07.963Z"
             }
           ]
         }
