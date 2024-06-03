@@ -17,8 +17,6 @@ namespace CursoWindowsFormsAlura
             InitializeComponent();
         }
 
-
-
         private void Btn_Hora_Click(object sender, EventArgs e)
         {
             Msk_TextBox.UseSystemPasswordChar = false;

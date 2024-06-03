@@ -14,3 +14,16 @@ C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.csproj.CoreCompileInputs.cache
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.exe
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.pdb
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\bin\Release\CursoWindowsFormsBiblioteca.dll
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\bin\Release\CursoWindowsFormsBiblioteca.pdb
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_DemonstracaoKey_UC.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_HelloWorld_UC.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_Mascara_UC.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_Principal_Menu.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_Principal_Menu_MDI.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_Principal_Menu_UC.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_Questao.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_ValidaCPF2_UC.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_ValidaCPF_UC.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.Frm_ValidaSenha_UC.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsAlura\obj\Release\CursoWindowsFormsAlura.csproj.CopyComplete

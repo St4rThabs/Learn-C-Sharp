@@ -179,5 +179,25 @@ namespace CursoWindowsFormsAlura.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        /// </summary>
+        internal static System.Drawing.Icon icons8_ponto_de_interrogação_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_ponto_de_interrogação_100", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ponto_de_interrogação_1001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_ponto_de_interrogação_1001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -154,4 +154,10 @@
   <data name="Frm_ValidaSenha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens\frm_validasenha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_ponto_de_interrogação_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\icons8-ponto-de-interrogação-100.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_ponto_de_interrogação_1001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\icons8-ponto-de-interrogação-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
