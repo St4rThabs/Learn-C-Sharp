@@ -70,6 +70,12 @@
     <Compile Include="Formulários Curso 1\Frm_Mascara.Designer.cs">
       <DependentUpon>Frm_Mascara.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_ArquivoImagem_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm_ArquivoImagem_UC.Designer.cs">
+      <DependentUpon>Frm_ArquivoImagem_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_DemonstracaoKey_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     <EmbeddedResource Include="Formulários Curso 1\Frm_Mascara.resx">
       <DependentUpon>Frm_Mascara.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ArquivoImagem_UC.resx">
+      <DependentUpon>Frm_ArquivoImagem_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_DemonstracaoKey_UC.resx">
       <DependentUpon>Frm_DemonstracaoKey_UC.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,20 +241,37 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagens\Frm_DemonstracaoKey.ico" />
-    <Content Include="Imagens\Frm_DemonstracaoKey.png" />
+    <Content Include="Imagens\Frm_DemonstracaoKey.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagens\Frm_HelloWorld.ico" />
-    <Content Include="Imagens\Frm_HelloWorld.png" />
+    <Content Include="Imagens\Frm_HelloWorld.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagens\Frm_Mascara.ico" />
-    <Content Include="Imagens\Frm_Mascara.png" />
+    <Content Include="Imagens\Frm_Mascara.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagens\Frm_Principal.ico" />
     <Content Include="Imagens\Frm_ValidaCPF.ico" />
-    <Content Include="Imagens\Frm_ValidaCPF.png" />
+    <Content Include="Imagens\Frm_ValidaCPF.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagens\Frm_ValidaCPF2.ico" />
-    <Content Include="Imagens\Frm_ValidaCPF2.png" />
+    <Content Include="Imagens\Frm_ValidaCPF2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagens\Frm_ValidaSenha.ico" />
-    <Content Include="Imagens\Frm_ValidaSenha.png" />
+    <Content Include="Imagens\Frm_ValidaSenha.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagens\icons8-folder-100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagens\icons8-ponto-de-interrogação-100.ico" />
-    <Content Include="Imagens\icons8-ponto-de-interrogação-100.png" />
+    <Content Include="Imagens\icons8-ponto-de-interrogação-100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CursoWindowsFormsBiblioteca\CursoWindowsFormsBiblioteca.csproj">

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace CursoWindowsFormsAlura
     public partial class Frm_Principal_Menu_UC : Form
     {
         int ControleHelloWorld = 0, ControleDemonstracaoKey = 0, ControleMascara = 0, ControleValidaCPF = 0, ControleValidaCPF2 = 0, ControleValidaSenha = 0;
+        int ControleArquivoImagem = 0;
 
         public Frm_Principal_Menu_UC()
         {
@@ -56,6 +58,30 @@ namespace CursoWindowsFormsAlura
             TB.ImageIndex = 2;
             TB.Controls.Add(U);
             Tbc_Aplicacoes.TabPages.Add(TB);
+        }
+
+        private void abrirImagemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog Db = new OpenFileDialog();
+            Db.InitialDirectory = (Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Imagens"));
+            Db.Filter = "PNG |*.PNG";
+            Db.Title = "Escolha a Imagem";
+
+            if(Db.ShowDialog() == DialogResult.OK)
+            {
+                string nomeArquivoImagem = Db.FileName;
+
+                ControleArquivoImagem += 1;
+                Frm_ArquivoImagem_UC U = new Frm_ArquivoImagem_UC(nomeArquivoImagem);
+                TabPage TB = new TabPage();
+                U.Dock = DockStyle.Fill;
+                TB.Name = "Abrir Imagem " + ControleArquivoImagem;
+                TB.Text = "Abrir Imagem " + ControleArquivoImagem;
+                TB.ImageIndex = 6;
+                TB.Controls.Add(U);
+                Tbc_Aplicacoes.TabPages.Add(TB);
+            }
+
         }
 
         private void validaCPFToolStripMenuItem_Click(object sender, EventArgs e)

@@ -44,7 +44,7 @@ namespace CursoWindowsFormsAlura
                 else
                 {
 
-                    Frm_Questao Dd = new Frm_Questao();
+                    Frm_Questao Dd = new Frm_Questao("Frm_ValidaCPF2", "Tem certeza em validar o CPF?");
                     Dd.ShowDialog();
 
                     // if (MessageBox.Show("Você deseja realmente validar o CPF?", "Mensagem de Validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
