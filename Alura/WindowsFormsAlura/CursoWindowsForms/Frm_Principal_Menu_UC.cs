@@ -115,11 +115,25 @@ namespace CursoWindowsForms
 
         private void desconectarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            novoToolStripMenuItem.Enabled = false;
-            apagarAbaToolStripMenuItem.Enabled = false;
-            abrirImagemToolStripMenuItem.Enabled = false;
-            desconectarToolStripMenuItem.Enabled = false;
-            conectarToolStripMenuItem.Enabled = true;
+            Frm_Questao Dd = new Frm_Questao("icons8-ponto-de-interrogação-100", "Você deseja se desconectar?");
+            Dd.ShowDialog();
+
+            // if (MessageBox.Show("Você deseja realmente validar o CPF?", "Mensagem de Validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+            if (Dd.DialogResult == DialogResult.Yes)
+            {
+                for (int i = Tbc_Aplicacoes.TabPages.Count - 1; i >= 0; i--)
+                {
+                    Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.TabPages[i]);
+                }
+
+                novoToolStripMenuItem.Enabled = false;
+                apagarAbaToolStripMenuItem.Enabled = false;
+                abrirImagemToolStripMenuItem.Enabled = false;
+                desconectarToolStripMenuItem.Enabled = false;
+                conectarToolStripMenuItem.Enabled = true;
+            }
+            
         }
 
         private void validaCPFToolStripMenuItem_Click(object sender, EventArgs e)
