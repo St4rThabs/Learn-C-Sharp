@@ -41,7 +41,9 @@
     <ApplicationIcon>Imagens\Frm_Principal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -256,6 +258,9 @@
     <Content Include="Imagens\DeleteTab.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Imagens\ExcluirBarra.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagens\Frm_DemonstracaoKey.ico" />
     <Content Include="Imagens\Frm_DemonstracaoKey.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -289,6 +294,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Imagens\key.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagens\LimparBarra.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Imagens\money.png">
