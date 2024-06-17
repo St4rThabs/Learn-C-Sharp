@@ -59,3 +59,5 @@ C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\obj\Debug\CursoWindowsForms.Frm_CadastroCliente_UC.resources
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\Imagens\ExcluirBarra.png
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\Imagens\LimparBarra.png
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\Newtonsoft.Json.dll
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\Newtonsoft.Json.xml

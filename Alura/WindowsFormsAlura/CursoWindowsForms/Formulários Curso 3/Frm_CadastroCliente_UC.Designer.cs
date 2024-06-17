@@ -157,7 +157,8 @@ namespace CursoWindowsForms
             this.Txt_CEP.Location = new System.Drawing.Point(6, 38);
             this.Txt_CEP.Name = "Txt_CEP";
             this.Txt_CEP.Size = new System.Drawing.Size(132, 20);
-            this.Txt_CEP.TabIndex = 7;
+            this.Txt_CEP.TabIndex = 8;
+            this.Txt_CEP.Leave += new System.EventHandler(this.Txt_CEP_Leave);
             // 
             // Lbl_CEP
             // 
@@ -173,7 +174,7 @@ namespace CursoWindowsForms
             this.Txt_Logradouro.Location = new System.Drawing.Point(144, 39);
             this.Txt_Logradouro.Name = "Txt_Logradouro";
             this.Txt_Logradouro.Size = new System.Drawing.Size(535, 20);
-            this.Txt_Logradouro.TabIndex = 8;
+            this.Txt_Logradouro.TabIndex = 9;
             // 
             // Lbl_Logradouro
             // 
@@ -189,7 +190,7 @@ namespace CursoWindowsForms
             this.Txt_Complemento.Location = new System.Drawing.Point(6, 78);
             this.Txt_Complemento.Name = "Txt_Complemento";
             this.Txt_Complemento.Size = new System.Drawing.Size(313, 20);
-            this.Txt_Complemento.TabIndex = 9;
+            this.Txt_Complemento.TabIndex = 10;
             // 
             // Lbl_Complemento
             // 
@@ -205,7 +206,7 @@ namespace CursoWindowsForms
             this.Txt_Bairro.Location = new System.Drawing.Point(325, 78);
             this.Txt_Bairro.Name = "Txt_Bairro";
             this.Txt_Bairro.Size = new System.Drawing.Size(354, 20);
-            this.Txt_Bairro.TabIndex = 10;
+            this.Txt_Bairro.TabIndex = 11;
             // 
             // Lbl_Bairro
             // 
@@ -230,7 +231,7 @@ namespace CursoWindowsForms
             this.Txt_Telefone.Location = new System.Drawing.Point(6, 32);
             this.Txt_Telefone.Name = "Txt_Telefone";
             this.Txt_Telefone.Size = new System.Drawing.Size(328, 20);
-            this.Txt_Telefone.TabIndex = 13;
+            this.Txt_Telefone.TabIndex = 14;
             // 
             // Lbl_Telefone
             // 
@@ -248,7 +249,7 @@ namespace CursoWindowsForms
             this.Txt_Profissao.Location = new System.Drawing.Point(341, 32);
             this.Txt_Profissao.Name = "Txt_Profissao";
             this.Txt_Profissao.Size = new System.Drawing.Size(269, 20);
-            this.Txt_Profissao.TabIndex = 14;
+            this.Txt_Profissao.TabIndex = 15;
             // 
             // Lbl_Profissao
             // 
@@ -264,7 +265,7 @@ namespace CursoWindowsForms
             this.Txt_RendaFamiliar.Location = new System.Drawing.Point(6, 72);
             this.Txt_RendaFamiliar.Name = "Txt_RendaFamiliar";
             this.Txt_RendaFamiliar.Size = new System.Drawing.Size(328, 20);
-            this.Txt_RendaFamiliar.TabIndex = 15;
+            this.Txt_RendaFamiliar.TabIndex = 16;
             // 
             // Lbl_RendaFamiliar
             // 
@@ -317,7 +318,7 @@ namespace CursoWindowsForms
             this.Chk_TemPai.Location = new System.Drawing.Point(8, 145);
             this.Chk_TemPai.Name = "Chk_TemPai";
             this.Chk_TemPai.Size = new System.Drawing.Size(80, 17);
-            this.Chk_TemPai.TabIndex = 0;
+            this.Chk_TemPai.TabIndex = 7;
             this.Chk_TemPai.Text = "checkBox1";
             this.Chk_TemPai.UseVisualStyleBackColor = true;
             this.Chk_TemPai.CheckedChanged += new System.EventHandler(this.Chk_TemPai_CheckedChanged);
@@ -330,7 +331,7 @@ namespace CursoWindowsForms
             this.Grp_Genero.Location = new System.Drawing.Point(473, 102);
             this.Grp_Genero.Name = "Grp_Genero";
             this.Grp_Genero.Size = new System.Drawing.Size(206, 76);
-            this.Grp_Genero.TabIndex = 10;
+            this.Grp_Genero.TabIndex = 6;
             this.Grp_Genero.TabStop = false;
             this.Grp_Genero.Text = "groupBox1";
             // 
@@ -394,7 +395,7 @@ namespace CursoWindowsForms
             this.Cmb_Estados.Location = new System.Drawing.Point(325, 117);
             this.Cmb_Estados.Name = "Cmb_Estados";
             this.Cmb_Estados.Size = new System.Drawing.Size(354, 21);
-            this.Cmb_Estados.TabIndex = 12;
+            this.Cmb_Estados.TabIndex = 13;
             // 
             // Lbl_Cidade
             // 
@@ -410,7 +411,7 @@ namespace CursoWindowsForms
             this.Txt_Cidade.Location = new System.Drawing.Point(6, 117);
             this.Txt_Cidade.Name = "Txt_Cidade";
             this.Txt_Cidade.Size = new System.Drawing.Size(313, 20);
-            this.Txt_Cidade.TabIndex = 11;
+            this.Txt_Cidade.TabIndex = 12;
             // 
             // Grp_Outros
             // 

@@ -16,3 +16,6 @@ C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.csproj.CoreCompileInputs.cache
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.dll
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.pdb
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\bin\Debug\Newtonsoft.Json.dll
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\bin\Debug\Newtonsoft.Json.xml
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.csproj.CopyComplete
