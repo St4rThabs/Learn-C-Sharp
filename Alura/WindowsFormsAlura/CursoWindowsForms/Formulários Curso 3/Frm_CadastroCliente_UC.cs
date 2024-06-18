@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CursoWindowsFormsBiblioteca.Classes;
+using CursoWindowsFormsBiblioteca.Classes.Databases;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.VisualBasic;
 using CursoWindowsFormsBiblioteca;
@@ -20,6 +21,7 @@ namespace CursoWindowsForms
         public Frm_CadastroCliente_UC()
         {
             InitializeComponent();
+
             #region Texto groupboxs
             Grp_Codigo.Text = "Código";
             Grp_DadosPessoais.Text = "Dados Pessoais";
@@ -86,6 +88,8 @@ namespace CursoWindowsForms
             Tls_Principal.Items[3].ToolTipText = "Apaga o cliente selecionado";
             Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela de entrada de dados";
             #endregion  
+
+            LimparFormulario();
         }
 
         private void Chk_TemPai_CheckedChanged(object sender, EventArgs e)
@@ -105,10 +109,34 @@ namespace CursoWindowsForms
             try
             {
                 Cliente.Unit C = new Cliente.Unit();
+
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-                MessageBox.Show("Classe inicializada sem erros", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                string clienteJson = Cliente.SerializedClassUnit(C);
+
+                Fichario F = new Fichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+
+                if (F.status)
+                {
+                    F.Incluir(C.Id, clienteJson);
+
+                    if (F.status)
+                    {
+
+                        MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             catch (ValidationException Ex)
             {
@@ -123,22 +151,125 @@ namespace CursoWindowsForms
 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique no botão ABRIR");
+            if (string.IsNullOrEmpty(Txt_Codigo.Text))
+            {
+                MessageBox.Show("Código do Cliente está vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Fichario F = new Fichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+
+                if (F.status)
+                {
+                    string clienteJson = F.Buscar(Txt_Codigo.Text);
+                    Cliente.Unit C = new Cliente.Unit();
+
+                    C = Cliente.DesSerializedClassUnit(clienteJson);
+                    EscreveFormulario(C);
+                }
+                else
+                {
+                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique no botão SALVAR");
+            if (string.IsNullOrEmpty(Txt_Codigo.Text))
+            {
+                MessageBox.Show("Código do Cliente está vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                try
+                {
+                    Cliente.Unit C = new Cliente.Unit();
+
+                    C = LeituraFormulario();
+                    C.ValidaClasse();
+                    C.ValidaComplemento();
+
+                    string clienteJson = Cliente.SerializedClassUnit(C);
+
+                    Fichario F = new Fichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+
+                    if (F.status)
+                    {
+                        F.Alterar(C.Id, clienteJson);
+
+                        if (F.status)
+                        {
+
+                            MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                catch (ValidationException Ex)
+                {
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void ApagarToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique no botão EXCLUIR");
+            if (string.IsNullOrEmpty(Txt_Codigo.Text))
+            {
+                MessageBox.Show("Código do Cliente está vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Fichario F = new Fichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+
+                if (F.status)
+                {
+                    string clienteJson = F.Buscar(Txt_Codigo.Text);
+                    Cliente.Unit C = new Cliente.Unit();
+
+                    C = Cliente.DesSerializedClassUnit(clienteJson);
+                    EscreveFormulario(C);
+
+                    Frm_Questao Db = new Frm_Questao("icons8-ponto-de-interrogação-100", "Você deseja excluir esse cliente?");
+                    Db.ShowDialog();
+                    
+                    if(Db.DialogResult == DialogResult.Yes)
+                    {
+                        F.Apagar(Txt_Codigo.Text);
+
+                        if (F.status)
+                        {
+                            MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void LimparToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique no botão LIMPAR");
+            LimparFormulario();
         }
 
         Cliente.Unit LeituraFormulario()
@@ -216,40 +347,118 @@ namespace CursoWindowsForms
             return C;
         }
 
+        private void EscreveFormulario(Cliente.Unit C)
+        {
+            #region dados pessoais
+            Txt_Codigo.Text = C.Id;
+            Txt_NomeCliente.Text = C.Nome;
+            Txt_NomeMae.Text = C.NomeMae;
+
+            if (C.NaoTemPai == true)
+            {
+                Chk_TemPai.Checked = true;
+                Txt_NomePai.Text = "";
+            }
+            else
+            {
+                C.NaoTemPai = false;
+                Txt_NomePai.Text = C.NomePai;
+            }
+
+            if (C.Genero == 0)
+                Rdb_Masculino.Checked = true;
+
+            if (C.Genero == 1)
+                Rdb_Feminino.Checked = true;
+
+            if (C.Genero == 2)
+                Rdb_Indefinido.Checked = true;
+
+
+            Txt_CPF.Text = C.Cpf;
+            #endregion
+
+            #region dados de moradia
+            Txt_CEP.Text = C.Cep;
+            Txt_Logradouro.Text = C.Logradouro;
+            Txt_Complemento.Text = C.Complemento;
+            Txt_Cidade.Text = C.Cidade;
+            Txt_Bairro.Text = C.Bairro;
+
+            if (C.Estado == "")
+                Cmb_Estados.SelectedIndex = -1;
+
+            else
+            {
+                for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                {
+                    if (C.Estado == Cmb_Estados.Items[i].ToString())
+                        Cmb_Estados.SelectedIndex = i;
+
+                }
+            }
+            #endregion
+
+            #region outros
+            Txt_Telefone.Text = C.Telefone;
+            Txt_Profissao.Text = C.Profissao;
+
+            Txt_RendaFamiliar.Text = C.RendaFamiliar.ToString();
+            #endregion
+        }
+
         private void Txt_CEP_Leave(object sender, EventArgs e)
         {
             string vCep = Txt_CEP.Text;
 
-            if (vCep != "")
+            if (string.IsNullOrEmpty(vCep)) return;
+
+            if (vCep.Length != 8) return;
+
+            if (!Information.IsNumeric(vCep)) return;
+
+            var vJson = Cls_Uteis.GeraJSONCEP(vCep);
+
+            Cep.Unit CEP = new Cep.Unit();
+            CEP = Cep.DesSerializedClassUnit(vJson);
+
+            // preenchendo os dados
+            Txt_Logradouro.Text = CEP.logradouro;
+            Txt_Bairro.Text = CEP.bairro;
+            Txt_Cidade.Text = CEP.localidade;
+
+            Cmb_Estados.SelectedIndex = -1;
+
+            for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
             {
-                if (vCep.Length == 8)
+                var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + CEP.uf + ")");
+
+                if (vPos > 0)
                 {
-                    if (Information.IsNumeric(vCep))
-                    {
-                        var vJson = Cls_Uteis.GeraJSONCEP(vCep);
-
-                        Cep.Unit CEP = new Cep.Unit();
-                        CEP = Cep.DesSerializedClassUnit(vJson);
-
-                        // preenchendo os dados
-                        Txt_Logradouro.Text = CEP.logradouro;
-                        Txt_Bairro.Text = CEP.bairro;
-                        Txt_Cidade.Text = CEP.localidade;
-
-                        Cmb_Estados.SelectedIndex = -1;
-
-                        for(int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
-                        {
-                            var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + CEP.uf + ")");
-
-                            if(vPos > 0)
-                            {
-                                Cmb_Estados.SelectedIndex = i;
-                            }
-                        }
-                    }
+                    Cmb_Estados.SelectedIndex = i;
                 }
             }
+        }
+
+        void LimparFormulario()
+        {
+            Txt_Codigo.Text = "";
+            Txt_Bairro.Text = "";
+            Txt_CEP.Text = "";
+            Txt_Complemento.Text = "";
+            Txt_CPF.Text = "";
+            Cmb_Estados.SelectedIndex = -1;
+            Txt_Cidade.Text = "";
+            Txt_Logradouro.Text = "";
+            Txt_NomeCliente.Text = "";
+            Txt_NomeMae.Text = "";
+            Txt_NomePai.Text = "";
+            Txt_Profissao.Text = "";
+            Txt_RendaFamiliar.Text = "";
+            Txt_Telefone.Text = "";
+
+            Chk_TemPai.Checked = false;
+            Rdb_Masculino.Checked = true;
         }
     }
 }

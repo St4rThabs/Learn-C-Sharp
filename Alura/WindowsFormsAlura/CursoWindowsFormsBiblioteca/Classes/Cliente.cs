@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace CursoWindowsFormsBiblioteca.Classes
 {
@@ -123,6 +124,16 @@ namespace CursoWindowsFormsBiblioteca.Classes
         {
             // uma lista de clientes
             public List<Unit> ListUnit { get; set; }
+        }
+
+        public static Unit DesSerializedClassUnit(string vJson)
+        {
+            return JsonConvert.DeserializeObject<Unit>(vJson);
+        }
+
+        public static string SerializedClassUnit(Unit unit)
+        {
+            return JsonConvert.SerializeObject(unit);
         }
     }
 }
