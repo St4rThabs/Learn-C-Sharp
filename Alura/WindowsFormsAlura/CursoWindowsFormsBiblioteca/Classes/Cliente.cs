@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
+using CursoWindowsFormsBiblioteca.Classes.Databases;
 
 namespace CursoWindowsFormsBiblioteca.Classes
 {
@@ -16,7 +17,7 @@ namespace CursoWindowsFormsBiblioteca.Classes
             #region dados pessoais do cliente
             [Required(ErrorMessage = "Código do Cliente é obrigatório.")]
             [RegularExpression("([0-9]+)", ErrorMessage = "Código do Cliente somente aceita valores númericos.")]
-            [StringLength(6, MinimumLength = 6 , ErrorMessage = "Código do Cliente deve ter 6 dígitos.")]
+            [StringLength(6, MinimumLength = 6, ErrorMessage = "Código do Cliente deve ter 6 dígitos.")]
             public string Id { get; set; }
 
             [Required(ErrorMessage = "Nome do Cliente é obrigatório.")]
@@ -98,14 +99,14 @@ namespace CursoWindowsFormsBiblioteca.Classes
 
             public void ValidaComplemento()
             {
-                if(this.NomePai == this.NomeMae)
+                if (this.NomePai == this.NomeMae)
                 {
                     throw new Exception("Nome do pai e da mãe não podem ser iguais.");
                 }
 
-                if(this.NaoTemPai == false)
+                if (this.NaoTemPai == false)
                 {
-                    if(this.NomePai == "")
+                    if (this.NomePai == "")
                     {
                         throw new Exception("Nome do pai não pode estar vazio quando a propriedade pai desconhecido não estiver marcado.");
                     }
@@ -117,6 +118,94 @@ namespace CursoWindowsFormsBiblioteca.Classes
                 {
                     throw new Exception("CPF inválido");
                 }
+            }
+
+            #region CRUD do Fichario
+            public void IncluirFichario(string Conexao)
+            {
+                string clienteJson = SerializedClassUnit(this);
+                Fichario F = new Fichario(Conexao);
+
+                if (F.status)
+                {
+                    F.Incluir(this.Id, clienteJson);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public Unit BuscarFichario(string id, string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+
+                if (F.status)
+                {
+                    string clienteJson = F.Buscar(id);
+
+                    return DesSerializedClassUnit(clienteJson);
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public void AlterarFichario(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+
+                Fichario F = new Fichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+
+                if (F.status)
+                {
+                    F.Alterar(Id, clienteJson);
+
+                    if (!(F.status))
+                        throw new Exception(F.mensagem);
+                }
+
+                else
+                    throw new Exception(F.mensagem);
+
+                #endregion
+            }
+
+            public void ApagarFichario(string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+
+                if (F.status)
+                {
+                    F.Apagar(this.Id);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public List<string> ListaFichario(string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+
+                if (F.status)
+                {
+                    List<string> todosJson = F.BuscarTodos();
+                    return todosJson;
+                }
+    
+                else
+                    throw new Exception(F.mensagem);
             }
         }
 
@@ -135,5 +224,7 @@ namespace CursoWindowsFormsBiblioteca.Classes
         {
             return JsonConvert.SerializeObject(unit);
         }
+
     }
+
 }

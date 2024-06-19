@@ -30,7 +30,7 @@ namespace CursoWindowsForms
             Grp_Outros.Text = "Outros";
             #endregion
 
-            #region Textos labels, checkbox e radiobutton
+            #region Textos labels, checkbox, radiobutton e button
             Lbl_Bairro.Text = "Bairro";
             Lbl_CEP.Text = "CEP";
             Lbl_Complemento.Text = "Complemento";
@@ -48,6 +48,8 @@ namespace CursoWindowsForms
             Rdb_Masculino.Text = "Masculino";
             Rdb_Feminino.Text = "Feminino";
             Rdb_Indefinido.Text = "Indefinido";
+
+            Btn_Busca.Text = "Buscar";
             #endregion
 
             #region Estados
@@ -113,35 +115,15 @@ namespace CursoWindowsForms
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-
-                string clienteJson = Cliente.SerializedClassUnit(C);
-
-                Fichario F = new Fichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
-
-                if (F.status)
-                {
-                    F.Incluir(C.Id, clienteJson);
-
-                    if (F.status)
-                    {
-
-                        MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                C.IncluirFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
 
             }
+
             catch (ValidationException Ex)
             {
                 MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -152,34 +134,26 @@ namespace CursoWindowsForms
         private void abrirToolStripButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Txt_Codigo.Text))
-            {
                 MessageBox.Show("Código do Cliente está vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
             else
-            {
-                Fichario F = new Fichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
-
-                if (F.status)
+                try
                 {
-                    string clienteJson = F.Buscar(Txt_Codigo.Text);
                     Cliente.Unit C = new Cliente.Unit();
-
-                    C = Cliente.DesSerializedClassUnit(clienteJson);
+                    C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
                     EscreveFormulario(C);
                 }
-                else
+                catch (Exception Ex)
                 {
-                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
         }
 
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Txt_Codigo.Text))
-            {
                 MessageBox.Show("Código do Cliente está vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
             else
             {
                 try
@@ -189,35 +163,16 @@ namespace CursoWindowsForms
                     C = LeituraFormulario();
                     C.ValidaClasse();
                     C.ValidaComplemento();
-
-                    string clienteJson = Cliente.SerializedClassUnit(C);
-
-                    Fichario F = new Fichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
-
-                    if (F.status)
-                    {
-                        F.Alterar(C.Id, clienteJson);
-
-                        if (F.status)
-                        {
-
-                            MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    C.AlterarFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+                    MessageBox.Show("OK: Indentificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
+
                 catch (ValidationException Ex)
                 {
                     MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
                 catch (Exception Ex)
                 {
                     MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -228,41 +183,37 @@ namespace CursoWindowsForms
         private void ApagarToolStripButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Txt_Codigo.Text))
-            {
                 MessageBox.Show("Código do Cliente está vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
             else
             {
-                Fichario F = new Fichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
-
-                if (F.status)
+                try
                 {
-                    string clienteJson = F.Buscar(Txt_Codigo.Text);
                     Cliente.Unit C = new Cliente.Unit();
+                    C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
 
-                    C = Cliente.DesSerializedClassUnit(clienteJson);
-                    EscreveFormulario(C);
-
-                    Frm_Questao Db = new Frm_Questao("icons8-ponto-de-interrogação-100", "Você deseja excluir esse cliente?");
-                    Db.ShowDialog();
+                    if (C == null)
+                        MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     
-                    if(Db.DialogResult == DialogResult.Yes)
+                    else
                     {
-                        F.Apagar(Txt_Codigo.Text);
+                        EscreveFormulario(C);
 
-                        if (F.status)
+                        Frm_Questao Db = new Frm_Questao("icons8_question_mark_961", "Você quer excluir o cliente?");
+                        Db.ShowDialog();
+
+                        if (Db.DialogResult == DialogResult.Yes)
                         {
-                            MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            C.ApagarFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+                            MessageBox.Show("OK: Indentificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LimparFormulario();
                         }
                     }
                 }
-                else
+
+                catch (Exception Ex)
                 {
-                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -460,5 +411,54 @@ namespace CursoWindowsForms
             Chk_TemPai.Checked = false;
             Rdb_Masculino.Checked = true;
         }
+
+        private void Btn_Busca_Click(object sender, EventArgs e)
+        {
+            Cliente.Unit C = new Cliente.Unit();
+            List<string> List = new List<string>();
+            List = C.ListaFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+
+            if (List == null)
+            {
+                MessageBox.Show("Base de dados vazia. Não existe nenhum identificador cadastrado","ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                try
+                {
+                    List<List<string>> ListaBusca = new List<List<string>>();
+
+                    for (int i = 0; i <= List.Count - 1; i++)
+                    {
+                        C = Cliente.DesSerializedClassUnit(List[i]);
+
+                        ListaBusca.Add(new List<string> { C.Id, C.Nome });
+
+                        Frm_Busca FForm = new Frm_Busca(ListaBusca);
+                        FForm.ShowDialog();
+
+                        if (FForm.DialogResult == DialogResult.OK)
+                        {
+                            var idSelect = FForm.idSelect;
+                            C =  C.BuscarFichario(idSelect, "C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+
+                            if(C == null)
+                            {
+                                EscreveFormulario(C);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
+
