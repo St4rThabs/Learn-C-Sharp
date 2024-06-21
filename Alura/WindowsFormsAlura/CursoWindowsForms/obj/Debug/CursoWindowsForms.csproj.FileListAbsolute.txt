@@ -62,3 +62,6 @@ C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\Newtonsoft.Json.dll
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\Newtonsoft.Json.xml
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\obj\Debug\CursoWindowsForms.Frm_Busca.resources
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\Databases\Fichario.mdf
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\Databases\Fichario_log.ldf
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\CursoWindowsFormsBiblioteca.dll.config
