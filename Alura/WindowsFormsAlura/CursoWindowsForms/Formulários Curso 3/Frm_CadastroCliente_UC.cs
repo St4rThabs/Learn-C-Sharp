@@ -114,10 +114,9 @@ namespace CursoWindowsForms
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-                C.IncluirFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
-
+                //C.IncluirFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+                C.IncluirFicharioDB("Cliente");
             }
-
             catch (ValidationException Ex)
             {
                 MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -139,7 +138,7 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+                    C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
                     EscreveFormulario(C);
                 }
                 catch (Exception Ex)
@@ -162,7 +161,7 @@ namespace CursoWindowsForms
                     C = LeituraFormulario();
                     C.ValidaClasse();
                     C.ValidaComplemento();
-                    C.AlterarFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+                    C.AlterarFicharioDB("Cliente");
                     MessageBox.Show("OK: Indentificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
@@ -189,11 +188,11 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+                    C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
 
                     if (C == null)
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
+
                     else
                     {
                         EscreveFormulario(C);
@@ -203,7 +202,7 @@ namespace CursoWindowsForms
 
                         if (Db.DialogResult == DialogResult.Yes)
                         {
-                            C.ApagarFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+                            C.ApagarFicharioDB("Cliente");
                             MessageBox.Show("OK: Indentificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LimparFormulario();
                         }
@@ -413,51 +412,35 @@ namespace CursoWindowsForms
 
         private void Btn_Busca_Click(object sender, EventArgs e)
         {
-            Cliente.Unit C = new Cliente.Unit();
-            List<string> List = new List<string>();
-            List = C.ListaFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
+            try
+            {
+                Cliente.Unit C = new Cliente.Unit();
+                var List = C.BuscarFicharioTodosDB("Cliente");
 
-            if (List == null)
-            {
-                MessageBox.Show("Base de dados vazia. Não existe nenhum identificador cadastrado","ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                try
+                Frm_Busca FForm = new Frm_Busca(List);
+                FForm.ShowDialog();
+
+                if (FForm.DialogResult == DialogResult.OK)
                 {
-                    List<List<string>> ListaBusca = new List<List<string>>();
+                    var idSelect = FForm.idSelect;
+                    C = C.BuscarFicharioDB(idSelect, "Cliente");
 
-                    for (int i = 0; i <= List.Count - 1; i++)
+                    if (C == null)
                     {
-                        C = Cliente.DesSerializedClassUnit(List[i]);
-
-                        ListaBusca.Add(new List<string> { C.Id, C.Nome });
-
-                        Frm_Busca FForm = new Frm_Busca(ListaBusca);
-                        FForm.ShowDialog();
-
-                        if (FForm.DialogResult == DialogResult.OK)
-                        {
-                            var idSelect = FForm.idSelect;
-                            C =  C.BuscarFichario(idSelect, "C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
-
-                            if(C == null)
-                            {
-                                EscreveFormulario(C);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
+                        MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        EscreveFormulario(C);
                     }
                 }
-                catch (Exception Ex)
-                {
-                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 }
+
 

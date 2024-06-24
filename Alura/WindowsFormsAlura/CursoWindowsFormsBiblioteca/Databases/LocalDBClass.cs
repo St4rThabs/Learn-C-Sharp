@@ -17,7 +17,7 @@ namespace CursoWindowsFormsBiblioteca.Databases
         {
             try
             {
-                stringConn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Databases\\Fichario.mdf;Integrated Security=True";
+                stringConn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\CursoWindowsFormsBiblioteca\\Databases\\Fichario.mdf;Integrated Security=True";
                 connDB = new SqlConnection(stringConn);
                 connDB.Open();
             }
