@@ -12,7 +12,6 @@ C:\Users\lucas.garcia\Desktop\Alura\CursoWindowsFormsBiblioteca\obj\Debug\CursoW
 C:\Users\lucas.garcia\Desktop\Alura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.pdb
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\bin\Debug\CursoWindowsFormsBiblioteca.dll
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\bin\Debug\CursoWindowsFormsBiblioteca.pdb
-C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.csproj.AssemblyReference.cache
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.csproj.CoreCompileInputs.cache
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.dll
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.pdb

@@ -115,7 +115,7 @@ namespace CursoWindowsForms
                 C.ValidaClasse();
                 C.ValidaComplemento();
                 //C.IncluirFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
-                C.IncluirFicharioDB("Cliente");
+                C.IncluirFicharioSQL("Cliente");
             }
             catch (ValidationException Ex)
             {
@@ -138,7 +138,7 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
+                    C = C.BuscarFicharioSQL(Txt_Codigo.Text, "Cliente");
                     EscreveFormulario(C);
                 }
                 catch (Exception Ex)
@@ -161,7 +161,7 @@ namespace CursoWindowsForms
                     C = LeituraFormulario();
                     C.ValidaClasse();
                     C.ValidaComplemento();
-                    C.AlterarFicharioDB("Cliente");
+                    C.AlterarFicharioSQL("Cliente");
                     MessageBox.Show("OK: Indentificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
@@ -188,7 +188,7 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
+                    C = C.BuscarFicharioSQL(Txt_Codigo.Text, "Cliente");
 
                     if (C == null)
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -197,12 +197,12 @@ namespace CursoWindowsForms
                     {
                         EscreveFormulario(C);
 
-                        Frm_Questao Db = new Frm_Questao("icons8_question_mark_961", "Você quer excluir o cliente?");
+                        Frm_Questao Db = new Frm_Questao("icons8-ponto-de-interrogação-100", "Você quer excluir o cliente?");
                         Db.ShowDialog();
 
                         if (Db.DialogResult == DialogResult.Yes)
                         {
-                            C.ApagarFicharioDB("Cliente");
+                            C.ApagarFicharioSQL("Cliente");
                             MessageBox.Show("OK: Indentificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LimparFormulario();
                         }
@@ -233,11 +233,11 @@ namespace CursoWindowsForms
 
             if (Chk_TemPai.Checked)
             {
-                C.NaoTemPai = true;
+                C.NaoTemPai = 1;
             }
             else
             {
-                C.NaoTemPai = false;
+                C.NaoTemPai = 0;
             }
 
             if (Rdb_Masculino.Checked)
@@ -303,14 +303,14 @@ namespace CursoWindowsForms
             Txt_NomeCliente.Text = C.Nome;
             Txt_NomeMae.Text = C.NomeMae;
 
-            if (C.NaoTemPai == true)
+            if (C.NaoTemPai == 1)
             {
                 Chk_TemPai.Checked = true;
                 Txt_NomePai.Text = "";
             }
             else
             {
-                C.NaoTemPai = false;
+                C.NaoTemPai = 0;
                 Txt_NomePai.Text = C.NomePai;
             }
 
@@ -415,7 +415,7 @@ namespace CursoWindowsForms
             try
             {
                 Cliente.Unit C = new Cliente.Unit();
-                var List = C.BuscarFicharioTodosDB("Cliente");
+                var List = C.BuscarFicharioTodosSQL("Cliente");
 
                 Frm_Busca FForm = new Frm_Busca(List);
                 FForm.ShowDialog();
@@ -423,7 +423,7 @@ namespace CursoWindowsForms
                 if (FForm.DialogResult == DialogResult.OK)
                 {
                     var idSelect = FForm.idSelect;
-                    C = C.BuscarFicharioDB(idSelect, "Cliente");
+                    C = C.BuscarFicharioSQL(idSelect, "Cliente");
 
                     if (C == null)
                     {

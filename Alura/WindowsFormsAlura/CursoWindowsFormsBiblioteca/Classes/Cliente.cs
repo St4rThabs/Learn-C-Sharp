@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 using CursoWindowsFormsBiblioteca.Classes.Databases;
 using CursoWindowsFormsBiblioteca.Databases;
+using System.Data;
 
 namespace CursoWindowsFormsBiblioteca.Classes
 {
@@ -32,7 +33,7 @@ namespace CursoWindowsFormsBiblioteca.Classes
             [StringLength(50, ErrorMessage = "Nome da Mãe do Cliente deve ter no máximo 50 caracteres.")]
             public string NomeMae { get; set; }
 
-            public bool NaoTemPai { get; set; }
+            public int NaoTemPai { get; set; }
 
             [Required(ErrorMessage = "CPF do Cliente é obrigatório.")]
             [StringLength(11, MinimumLength = 11, ErrorMessage = "CPF do Cliente deve ter 11 dígitos.")]
@@ -105,7 +106,7 @@ namespace CursoWindowsFormsBiblioteca.Classes
                     throw new Exception("Nome do pai e da mãe não podem ser iguais.");
                 }
 
-                if (this.NaoTemPai == false)
+                if (this.NaoTemPai == 1)
                 {
                     if (this.NomePai == "")
                     {
@@ -301,6 +302,203 @@ namespace CursoWindowsFormsBiblioteca.Classes
                     throw new Exception(F.mensagem);
                 }
             }
+
+            #endregion
+
+            #region CRUD do Fichario SQL Server
+            public void IncluirFicharioSQL(string conexao)
+            {
+                string clienteJson = SerializedClassUnit(this);
+                FicharioSQLServer F = new FicharioSQLServer(conexao);
+
+                if (F.status)
+                {
+                    F.Incluir(this.Id, clienteJson);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public Unit BuscarFicharioSQL(string id, string conexao)
+            {
+                FicharioSQLServer F = new FicharioSQLServer(conexao);
+
+                if (F.status)
+                {
+                    string clienteJson = F.Buscar(id);
+
+                    return DesSerializedClassUnit(clienteJson);
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public void AlterarFicharioSQL(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+
+                FicharioSQLServer F = new FicharioSQLServer(conexao);
+
+                if (F.status)
+                {
+                    F.Alterar(Id, clienteJson);
+
+                    if (!(F.status))
+                        throw new Exception(F.mensagem);
+                }
+
+                else
+                    throw new Exception(F.mensagem);
+
+            }
+            public void ApagarFicharioSQL(string conexao)
+            {
+                FicharioSQLServer F = new FicharioSQLServer(conexao);
+
+                if (F.status)
+                {
+                    F.Apagar(this.Id);
+                    if (!(F.status))
+                        throw new Exception(F.mensagem);
+                }
+                else
+                    throw new Exception(F.mensagem);
+
+            }
+
+            public List<List<string>> BuscarFicharioTodosSQL(string conexao)
+            {
+                FicharioSQLServer F = new FicharioSQLServer(conexao);
+                if (F.status)
+                {
+                    List<string> List = new List<string>();
+                    List = F.BuscarTodos();
+
+                    if (F.status)
+                    {
+                        List<List<string>> ListaBusca = new List<List<string>>();
+                        for (int i = 0; i <= List.Count - 1; i++)
+                        {
+                            Unit C = DesSerializedClassUnit(List[i]);
+                            ListaBusca.Add(new List<string> { C.Id, C.Nome });
+                        }
+                        return ListaBusca;
+                    }
+                    else
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            #endregion
+
+            #region CRUD do Fichario SQL Server Relacional
+
+            #region Funções Auxiliares
+            public string ToInsert()
+            {
+                string SQL;
+                SQL = @"INSERT INTO TB_Cliente
+                    (Id,
+                    Nome,
+                    NomePai,
+                    NomeMae,
+                    NaoTemPai,
+                    Cpf,Genero,
+                    Cep,
+                    Logradouro,
+                    Complemento,
+                    Bairro,
+                    Cidade,
+                    Estado,
+                    Telefone,
+                    Profissao,
+                    RendaFamiliar)
+                    VALUES ";
+
+                SQL += "('" + Id + "'," +
+                "'" + Nome + "'," +
+                "'" + NomePai + "'," +
+                "'" + NomeMae + "'," +
+                Convert.ToString(NaoTemPai) + "," +
+                "'" + Cpf + "'," +
+                Convert.ToString(Genero) + "," +
+                "'" + Cep + "'," +
+                "'" + Logradouro + "'," +
+                "'" + Complemento + "'," +
+                "'" + Bairro + "'," +
+                "'" + Cidade + "'," +
+                "'" + Estado + "'," +
+                "'" + Telefone + "'," +
+                "'" + Profissao + "'," +
+                Convert.ToString(RendaFamiliar) + ");";
+
+                return SQL;
+            }
+
+            public string ToUpdate(string Id)
+            {
+                string SQL;
+
+                SQL = @"UPDATE TB_Cliente SET " +
+                "Id = '" + this.Id + "'" +
+                " , Nome = '" + Nome + "'" +
+                " , NomePai = '" + NomePai + "'" +
+                " , NomeMae = '" + NomeMae + "'" +
+                " , NaoTemPai = " + Convert.ToString(NaoTemPai) + "" +
+                " , Cpf = '" + Cpf + "'" +
+                " , Genero = " + Convert.ToString(Genero) + "" +
+                " , Cep = '" + Cep + "'" +
+                " , Logradouro = '" + Logradouro + "'" +
+                " , Complemento = '" + Complemento + "'" +
+                " , Bairro = '" + Bairro + "'" +
+                " , Cidade = '" + Cidade + "'" +
+                " , Estado = '" + Estado + "'" +
+                " , Telefone = '" + Telefone + "'" +
+                " , Profissao = '" + Profissao + "'" +
+                " , RendaFamiliar = " + Convert.ToString(RendaFamiliar) + "" +
+                " WHERE Id = '" + Id + "';";
+
+                return SQL;
+            }
+
+            public Unit DataRowToUnit(DataRow dr)
+            {
+                Unit u = new Unit();
+
+                u.Id = dr["Id"].ToString();
+                u.Nome = dr["Nome"].ToString();
+                u.NomePai = dr["NomePai"].ToString();
+                u.NomeMae = dr["NomeMae"].ToString();
+                u.NaoTemPai = Convert.ToInt32(dr["NaoTemPai"]);
+                u.Cpf = dr["Cpf"].ToString();
+                u.Genero = Convert.ToInt32(dr["Genero"]);
+                u.Cep = dr["Cep"].ToString();
+                u.Logradouro = dr["Logradouro"].ToString();
+                u.Complemento = dr["Complemento"].ToString();
+                u.Bairro = dr["Bairro"].ToString();
+                u.Cidade = dr["Cidade"].ToString();
+                u.Estado = dr["Estado"].ToString();
+                u.Telefone = dr["Telefone"].ToString();
+                u.Profissao = dr["Profissao"].ToString();
+                u.RendaFamiliar = Convert.ToDouble(dr["RendaFamiliar"]);
+
+                return u;
+            }
+            #endregion
 
             #endregion
         }
