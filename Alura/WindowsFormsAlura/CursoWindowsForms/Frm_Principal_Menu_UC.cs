@@ -247,6 +247,12 @@ namespace CursoWindowsForms
             }
         }
 
+        private void agenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Agencia F = new Frm_Agencia();
+            F.ShowDialog();
+        }
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(ControleCadastroClientes == 0)

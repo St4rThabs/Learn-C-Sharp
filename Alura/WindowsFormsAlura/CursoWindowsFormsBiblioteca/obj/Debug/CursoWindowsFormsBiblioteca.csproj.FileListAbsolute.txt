@@ -21,3 +21,4 @@ C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\bin\Debug\Databases\Fichario.mdf
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\bin\Debug\Databases\Fichario_log.ldf
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\bin\Debug\CursoWindowsFormsBiblioteca.dll.config
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsFormsBiblioteca\obj\Debug\CursoWindowsFormsBiblioteca.csproj.AssemblyReference.cache

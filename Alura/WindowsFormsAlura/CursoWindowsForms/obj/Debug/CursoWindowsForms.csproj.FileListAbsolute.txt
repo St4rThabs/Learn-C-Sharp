@@ -65,3 +65,4 @@ C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\obj\Debug
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\Databases\Fichario.mdf
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\Databases\Fichario_log.ldf
 C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\bin\Debug\CursoWindowsFormsBiblioteca.dll.config
+C:\Users\thabata.lima\source\repos\WindowsFormsAlura\CursoWindowsForms\obj\Debug\CursoWindowsForms.Frm_Agencia.resources

@@ -359,6 +359,7 @@ namespace CursoWindowsFormsBiblioteca.Classes
                     throw new Exception(F.mensagem);
 
             }
+
             public void ApagarFicharioSQL(string conexao)
             {
                 FicharioSQLServer F = new FicharioSQLServer(conexao);
@@ -420,7 +421,7 @@ namespace CursoWindowsFormsBiblioteca.Classes
                     Cpf,Genero,
                     Cep,
                     Logradouro,
-                    Complemento,
+                    Complemente,
                     Bairro,
                     Cidade,
                     Estado,
@@ -430,20 +431,20 @@ namespace CursoWindowsFormsBiblioteca.Classes
                     VALUES ";
 
                 SQL += "('" + Id + "'," +
-                "'" + Nome + "'," +
-                "'" + NomePai + "'," +
-                "'" + NomeMae + "'," +
+                " '" + Nome + "'," +
+                " '" + NomePai + "'," +
+                " '" + NomeMae + "', " +
                 Convert.ToString(NaoTemPai) + "," +
-                "'" + Cpf + "'," +
-                Convert.ToString(Genero) + "," +
-                "'" + Cep + "'," +
-                "'" + Logradouro + "'," +
-                "'" + Complemento + "'," +
-                "'" + Bairro + "'," +
-                "'" + Cidade + "'," +
-                "'" + Estado + "'," +
-                "'" + Telefone + "'," +
-                "'" + Profissao + "'," +
+                " '" + Cpf + "'," +
+                Convert.ToString(Genero) + ", " +
+                " '" + Cep + "'," +
+                " '" + Logradouro + "'," +
+                " '" + Complemento + "'," +
+                " '" + Bairro + "'," +
+                " '" + Cidade + "'," +
+                " '" + Estado + "'," +
+                " '" + Telefone + "'," +
+                " '" + Profissao + "'," +
                 Convert.ToString(RendaFamiliar) + ");";
 
                 return SQL;
@@ -463,7 +464,7 @@ namespace CursoWindowsFormsBiblioteca.Classes
                 " , Genero = " + Convert.ToString(Genero) + "" +
                 " , Cep = '" + Cep + "'" +
                 " , Logradouro = '" + Logradouro + "'" +
-                " , Complemento = '" + Complemento + "'" +
+                " , Complemente = '" + Complemento + "'" +
                 " , Bairro = '" + Bairro + "'" +
                 " , Cidade = '" + Cidade + "'" +
                 " , Estado = '" + Estado + "'" +
@@ -488,7 +489,7 @@ namespace CursoWindowsFormsBiblioteca.Classes
                 u.Genero = Convert.ToInt32(dr["Genero"]);
                 u.Cep = dr["Cep"].ToString();
                 u.Logradouro = dr["Logradouro"].ToString();
-                u.Complemento = dr["Complemento"].ToString();
+                u.Complemento = dr["Complemente"].ToString();
                 u.Bairro = dr["Bairro"].ToString();
                 u.Cidade = dr["Cidade"].ToString();
                 u.Estado = dr["Estado"].ToString();
@@ -499,6 +500,128 @@ namespace CursoWindowsFormsBiblioteca.Classes
                 return u;
             }
             #endregion
+
+            public void IncluirFicharioSQLRel()
+            {
+                try
+                {
+                    string SQL = ToInsert();
+                    var db = new SQLServerClass();
+
+                    db.SQLCommand(SQL);
+                    db.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Inclusão não permitida. Identificador: " + Id + ", erro: " + ex.Message);
+                }
+            }
+
+            public Unit BuscarFicharioSQLRel(string Id)
+            {
+                try
+                {
+                    string SQL = "SELECT * FROM TB_Cliente WHERE Id = '" + Id + "'";
+
+                    var db = new SQLServerClass();
+                    var dt = db.SQLQuery(SQL);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        db.Close();
+                        throw new Exception("Identificador: " + Id + " não existe.");
+                    }
+                    else
+                    {
+                        Unit u = DataRowToUnit(dt.Rows[0]);
+                        return u;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao buscar o conteúdo do identificador: " + ex.Message);
+                }
+            }
+
+            public void AlterarFicharioSQLRel(string Id)
+            {
+                try
+                {
+                    string SQL = "SELECT * FROM TB_Cliente WHERE Id = '" + Id + "'";
+
+                    var db = new SQLServerClass();
+                    var dt = db.SQLQuery(SQL);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        db.Close();
+                        throw new Exception("Identificador: " + Id + " não existe.");
+                    }
+                    else
+                    {
+                        SQL = ToUpdate(this.Id);
+                        db.SQLCommand(SQL);
+                        db.Close();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao alterar o conteúdo do identificador: " + ex.Message);
+                }
+            }
+
+            public void ApagarFicharioSQLRel(string Id)
+            {
+                try
+                {
+                    string SQL = "SELECT * FROM TB_Cliente WHERE Id = '" + this.Id + "'";
+
+                    var db = new SQLServerClass();
+                    var dt = db.SQLQuery(SQL);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        db.Close();
+                        throw new Exception("Identificador: " + Id + " não existe.");
+                    }
+                    else
+                    {
+                        SQL = "DELETE FROM TB_Cliente WHERE Id = '" + this.Id + "'";
+                        db.SQLCommand(SQL);
+                        db.Close();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao alterar o conteúdo do identificador: " + ex.Message);
+                }
+            }
+
+            public List<List<string>> BuscarFicharioTodosSQLRel()
+            {
+                List<List<string>> ListaBusca = new List<List<string>>();
+
+                try
+                {
+                    var SQL = "SELECT * FROM TB_Cliente";
+                    var db = new SQLServerClass();
+                    var dt = db.SQLQuery(SQL);
+
+                    for (int i = 0; i <= dt.Rows.Count - 1; i++)
+                    {
+                        ListaBusca.Add(new List<string> { dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Nome"].ToString() });
+                    }
+                    return ListaBusca;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Conexão com a base de dados ocasionou um erro: " + ex.Message);
+                }
+            }
 
             #endregion
         }

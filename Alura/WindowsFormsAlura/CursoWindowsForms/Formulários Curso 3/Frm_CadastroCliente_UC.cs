@@ -27,6 +27,7 @@ namespace CursoWindowsForms
             Grp_Endereco.Text = "Dados de Moradia";
             Grp_Genero.Text = "Gênero";
             Grp_Outros.Text = "Outros";
+            Grp_DataGrid.Text = "Clientes";
             #endregion
 
             #region Textos labels, checkbox, radiobutton e button
@@ -90,6 +91,7 @@ namespace CursoWindowsForms
             Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela de entrada de dados";
             #endregion  
 
+            AtualizaGrid();
             LimparFormulario();
         }
 
@@ -114,8 +116,14 @@ namespace CursoWindowsForms
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
+                C.IncluirFicharioSQLRel();
+
+                MessageBox.Show("OK: Indentificador incluído com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AtualizaGrid();
+
                 //C.IncluirFichario("C:\\Users\\thabata.lima\\source\\repos\\WindowsFormsAlura\\Fichario");
-                C.IncluirFicharioSQL("Cliente");
+                //C.IncluirFicharioSQL("Cliente");
+
             }
             catch (ValidationException Ex)
             {
@@ -138,7 +146,7 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFicharioSQL(Txt_Codigo.Text, "Cliente");
+                    C = C.BuscarFicharioSQLRel(Txt_Codigo.Text);
                     EscreveFormulario(C);
                 }
                 catch (Exception Ex)
@@ -161,9 +169,10 @@ namespace CursoWindowsForms
                     C = LeituraFormulario();
                     C.ValidaClasse();
                     C.ValidaComplemento();
-                    C.AlterarFicharioSQL("Cliente");
-                    MessageBox.Show("OK: Indentificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    C.AlterarFicharioSQLRel(Txt_Codigo.Text);
 
+                    MessageBox.Show("OK: Indentificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizaGrid();
                 }
 
                 catch (ValidationException Ex)
@@ -188,7 +197,7 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFicharioSQL(Txt_Codigo.Text, "Cliente");
+                    C = C.BuscarFicharioSQLRel(Txt_Codigo.Text);
 
                     if (C == null)
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -202,8 +211,9 @@ namespace CursoWindowsForms
 
                         if (Db.DialogResult == DialogResult.Yes)
                         {
-                            C.ApagarFicharioSQL("Cliente");
+                            C.ApagarFicharioSQLRel(Txt_Codigo.Text);
                             MessageBox.Show("OK: Indentificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AtualizaGrid();
                             LimparFormulario();
                         }
                     }
@@ -415,7 +425,7 @@ namespace CursoWindowsForms
             try
             {
                 Cliente.Unit C = new Cliente.Unit();
-                var List = C.BuscarFicharioTodosSQL("Cliente");
+                var List = C.BuscarFicharioTodosSQLRel();
 
                 Frm_Busca FForm = new Frm_Busca(List);
                 FForm.ShowDialog();
@@ -423,7 +433,7 @@ namespace CursoWindowsForms
                 if (FForm.DialogResult == DialogResult.OK)
                 {
                     var idSelect = FForm.idSelect;
-                    C = C.BuscarFicharioSQL(idSelect, "Cliente");
+                    C = C.BuscarFicharioSQLRel(idSelect);
 
                     if (C == null)
                     {
@@ -436,6 +446,63 @@ namespace CursoWindowsForms
                 }
             }
             catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AtualizaGrid()
+        {
+            try
+            {
+                Cliente.Unit C = new Cliente.Unit();
+                var List = C.BuscarFicharioTodosSQLRel();
+
+                Dg_Clientes.Rows.Clear();
+
+                for (int i = 0; i <= List.Count - 1; i++)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+
+                    row.CreateCells(Dg_Clientes);
+                    row.Cells[0].Value = List[i][0].ToString();
+                    row.Cells[1].Value = List[i][1].ToString();
+
+                    Dg_Clientes.Rows.Add(row);
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Dg_Clientes_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = Dg_Clientes.SelectedRows[0];
+
+                string Id = row.Cells[0].Value.ToString();
+
+                if (string.IsNullOrEmpty(Id))
+                    MessageBox.Show("Código do Cliente está vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                else
+                    try
+                    {
+                        Cliente.Unit C = new Cliente.Unit();
+                        C = C.BuscarFicharioSQLRel(Id);
+                        EscreveFormulario(C);
+                    }
+                    catch (Exception Ex)
+                    {
+                        MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+            }
+            catch(Exception Ex)
             {
                 MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
